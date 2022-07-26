@@ -53,3 +53,17 @@
 
 ### Leaderboard
 分为Public Test Set和Private Test Set，后者用于比赛后的最终评价
+
+### 总体比赛流程
+<p align="center">
+  <img src="../res/week1/img1.png" width="500"/>
+</p>
+
+## Real World ML Pipeline
+1. Understanding of business problem
+2. Problem formalization
+3. Data collecting
+4. Data preprocessing
+5. Modelling
+6. Way to evaluate model in real life
+7. Way to deploy model
