@@ -81,4 +81,38 @@ Families of ML algorithms
 ### 1.4.1 Linear model
 本质思想：通过一条线划分空间为两个部分，对数据点进行分类（比如logistic regression和SVM）
 + 优点：
-  + Linear model对于稀疏高维数据（sparse high dimensional data）特别好
+  1. Linear model对于稀疏高维数据（sparse high dimensional data）特别好
++ 缺点：
+  1. 线性模型的普适性弱，大多数情况下点的分布会比较复杂
++ 实现：
+  1. scikit-learn
+  2. Vowpal Wabbit（专门用来处理大型数据）
+
+
+  模型：Decision Tree，Random Forest，GBDT
+  本质思想：通过不同标准分类点
+  + 实现：
+    1. scikit-learn
+    2. XGBoost和LightGBM提高速度和准确性
+
+### 1.4.3 KNN
+本质思想：假设一点，然后找最近距离的几个点，然后修改假设点
++ 缺陷：
+  1. 需要考虑到距离的计算公式，比如square distance不能捕捉语义
++ 实现：
+  1. scikit-learn（包含所有距离函数，并且可以使用自己的距离公式）
+
+### 1.4.4 Neural Networks
++ 实现：
+  1. TensorFlow
+  2. mxnet
+  3. Pytorch
+  4. Lasagne
+
+### 1.4.5 Conclusion
+1. There is no "silver bullet" algorithm
+2. Linear models split space into 2 subspaces
+3. Tree-based methods splits space into boxes
+4. k-NN methods heavy rely on how to measure points "closeness"
+5. Feed-forward NNs produce smooth non-linear decision boundary
+6. The most powerful methods are **Gradient Boosted Decision Trees** and **Neural Networks**
