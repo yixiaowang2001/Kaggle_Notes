@@ -89,12 +89,12 @@ Families of ML algorithms
   2. Vowpal Wabbit（专门用来处理大型数据）
 
 
-  ### 1.4.2 Tree-based
-  模型：Decision Tree，Random Forest，GBDT
-  本质思想：通过不同标准分类点
-  + 实现：
-    1. scikit-learn
-    2. XGBoost和LightGBM提高速度和准确性
+### 1.4.2 Tree-based
+模型：Decision Tree，Random Forest，GBDT
+本质思想：通过不同标准分类点
++ 实现：
+  1. scikit-learn
+  2. XGBoost和LightGBM提高速度和准确性
 
 ### 1.4.3 KNN
 本质思想：假设一点，然后找最近距离的几个点，然后修改假设点
@@ -116,4 +116,4 @@ Families of ML algorithms
 3. Tree-based methods splits space into boxes
 4. k-NN methods heavy rely on how to measure points "closeness"
 5. Feed-forward NNs produce smooth non-linear decision boundary
-6. The most powerful methods are **Gradient Boosted Decision Trees** and **Neural Networks**
+6. The most powerful methods are ***Gradient Boosted Decision Trees*** and ***Neural Networks***
