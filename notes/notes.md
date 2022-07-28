@@ -128,6 +128,7 @@ Families of ML algorithms
 + External tools：Vowpal Wabbit（大型数据计算）、srendle/libfm（优化器，适用于稀疏数据比如点击率预测）、guestwalk/libffm（同上）、baidu/fast_rgf
 
 ## 1.6 Featrue preprocessing and generation with respect to models
+
 Main topics:
 1. Feature preprocessing
 2. Feature generation
@@ -135,7 +136,15 @@ Main topics:
 
 Features: numeric, categorical, ordinal, datetime, coordinates
 
+### 1.6.1 具体过程
 **以[Titanic的数据集](https://www.kaggle.com/competitions/titanic/data)为例**
+
+<p align="center">
+  <img src="../res/img/img2.png" width="500"/>
+</p>
+
+#### 判断数据类型
+
 + Survived: binary
 + Pclass: categorical
 + Name: text
@@ -148,6 +157,44 @@ Features: numeric, categorical, ordinal, datetime, coordinates
 + Cabin: cateborical
 + Embarked: categorical
 
+为什么要这么做？
+1. 模型和预处理高度相关
+2. common feature generation methods
+
+#### Feature preprocessing
+假设一种情况：
+
 <p align="center">
-  <img src="../res/img/img1.png" width="500"/>
+  <img src="../res/img/img3.png" width="500"/>
 </p>
+
+pclass和目标之间很明显不是线性的情况，但如果我们要使用线性模型（随机森林在这种情况下会更好），就需要在某种程度上预处理pclass的数据，如下图：
+
+<p align="center">
+  <img src="../res/img/img4.png" width="500"/>
+</p>
+
+#### Feature generation
+假设对于一个苹果的销售，我们已经拥有过去两周的销售数据和一个大致的趋势。
+
+<p align="center">
+  <img src="../res/img/img5.png" width="500"/>
+</p>
+
+如果我们决定使用线性模型，并且想要告诉模型这样的趋势，就需要添加一个feature来说明已经过去的周数（number of weeks passed）来让模型很好的找到linear dependency。
+
+另一方面，如果考虑使用决策树，那么我们需要用到mean target value for each week这个特征。
+
+<p align="center">
+  <img src="../res/img/img6.png" width="500"/>
+  <img src="../res/img/img7.png" width="500"/>
+</p>
+
+**所以总结来说，无论是feature preprocessing还是generation，都是和所使用的模型高度相关（从模型到feature preprocessing的方式）。**
+
+## 1.7 Numeric features
++ Preprocessing
+  + Tree-based models
+  + Non-tree-based models
++ Feature generation
+
