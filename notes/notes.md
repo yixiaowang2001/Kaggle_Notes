@@ -323,4 +323,11 @@ Day number in week, month, season, year, second, minute, hour
   <img src="../res/img/img26.png" width="500"/>
 </p>
 
+#### c. Difference between date
+datetime_feature_1 - datetime_feature_2
+<p align="center">
+  <img src="../res/img/img27.png" width="500"/>
+  <img src="../res/img/img28.png" width="500"/>
+</p>
+
 ### 1.9.2 Coordinates
