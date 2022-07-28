@@ -198,3 +198,53 @@ pclass和目标之间很明显不是线性的情况，但如果我们要使用�
   + Non-tree-based models
 + Feature generation
 
+<p align="center">
+  <img src="../res/img/img8.png" width="500"/>
+</p>
+
+### 1.7.1 Feature Preprocessing
+#### a. scaling
++ scaling对于KNN和linear都会造成影响；regularization和feature scaling是成正比的
++ gradient descent会受scaling的巨大影响
++ KNN中很重要
+
+总结来说，不同模型所适用的scaling方法是不同的，或者可以说，选择scaling方法本身就是一个parameter needed to be optimized。
+
+1. To [0,1]：distribution并没有变化
+
+<p align="center">
+  <img src="../res/img/img9.png" width="500"/>
+  <img src="../res/img/img10.png" width="500"/>
+</p>
+
+2. To mean = 0, std = 1
+
+<p align="center">
+  <img src="../res/img/img11.png" width="500"/>
+</p>
+
+#### b. outliers
+对于线性模型来说，outlier是影响结果的重要因素
+
+<p align="center">
+  <img src="../res/img/img12.png" width="500"/>
+</p>
+
+解决方式：设定upper bound和lower bound（比如1%和99%），被称为winsorization（极值调整）
+
+#### c. rank
+基本思路：sets spaces between proper assorted values to be equal。对于有outlier的情况，rank的处理方式可能会好于MinMaxScaler，因为rank transformation可以将异常值更接近其他对象而不是忽略他们。
+
+<p align="center">
+  <img src="../res/img/img13.png" width="500"/>
+</p>
+
+### d. other
+<p align="center">
+  <img src="../res/img/img14.png" width="500"/>
+</p>
+
+### 1.7.2 Feature generation
+Ways to proceed:
+1. prior knowledge
+2. EDA
