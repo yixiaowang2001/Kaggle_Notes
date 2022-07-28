@@ -117,3 +117,37 @@ Families of ML algorithms
 4. k-NN methods heavy rely on how to measure points "closeness"
 5. Feed-forward NNs produce smooth non-linear decision boundary
 6. The most powerful methods are ***Gradient Boosted Decision Trees*** and ***Neural Networks***
+
+## 1.5 Hardware/Software requirement
++ Laptop（RAM、Cores、Storage）
++ Cloud resources（Amazon AWS、Microsoft Azure、Google Cloud）
++ Software（Language）：Python
++ Basic Stack：Numpy、Pandas、scikit-learn、matplotlib
++ IDE：IPython、Jupyter notebook
++ Special packages：XGBoost（提升决策树速度）、Microsoft/LightGBM（提升决策树速度）、Keras（用户友好的神经网络框架）、danielfrg/tsne
++ External tools：Vowpal Wabbit（大型数据计算）、srendle/libfm（优化器，适用于稀疏数据比如点击率预测）、guestwalk/libffm（同上）、baidu/fast_rgf
+
+## 1.6 Featrue preprocessing and generation with respect to models
+Main topics:
+1. Feature preprocessing
+2. Feature generation
+3. Their dependence on a model type
+
+Features: numeric, categorical, ordinal, datetime, coordinates
+
+**以[Titanic的数据集](https://www.kaggle.com/competitions/titanic/data)为例**
++ Survived: binary
++ Pclass: categorical
++ Name: text
++ Sex: categorical
++ Age: numerical
++ SibSp: categorical
++ Parch: categorical
++ Ticket: ID
++ Fare: numerical
++ Cabin: cateborical
++ Embarked: categorical
+
+<p align="center">
+  <img src="../res/img/img1.png" width="500"/>
+</p>
