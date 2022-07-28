@@ -268,7 +268,7 @@ Ways to proceed:
   <img src="../res/img/img18.png" width="500"/>
 </p>
 
-### 1.8 Categorical and ordinal features
+## 1.8 Categorical and ordinal features
 
 Ordinal features:
 ordinal（有顺序的categorical）：
@@ -276,19 +276,31 @@ ordinal（有顺序的categorical）：
   <img src="../res/img/img19.png" width="500"/>
 </p>
 
-#### Label encoding
+#### a. Label encoding
 以embarked为例：
 <p align="center">
   <img src="../res/img/img20.png" width="500"/>
 </p>
 
-#### Frequency encoding
+#### b. Frequency encoding
 但如果出现频率相同，那么这个encoding方式将无法区别他们
 <p align="center">
   <img src="../res/img/img21.png" width="500"/>
 </p>
 
-#### One-hot encoding
+#### c. One-hot encoding
+特点：already sclaed；会减慢tree的速度并且并不会提升它的表现；如果类别较多，那么会有很多充满零的列
 <p align="center">
   <img src="../res/img/img22.png" width="500"/>
+</p>
+
+稀疏矩阵：在RAM中只存储非零的element，节省空间并且提高运算速度。
+<br>可以通过将两个variable并行来进行one-hot encoding：
+<p align="center">
+  <img src="../res/img/img23.png" width="500"/>
+</p>
+
+**总结：**
+<p align="center">
+  <img src="../res/img/img24.png" width="500"/>
 </p>
