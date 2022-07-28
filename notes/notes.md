@@ -144,18 +144,19 @@ Features: numeric, categorical, ordinal, datetime, coordinates
 </p>
 
 #### 判断数据类型
-
 + Survived: binary
-+ Pclass: categorical
++ Pclass: ordinal
 + Name: text
 + Sex: categorical
 + Age: numerical
-+ SibSp: categorical
-+ Parch: categorical
++ SibSp: counts
++ Parch: counts
 + Ticket: ID
 + Fare: numerical
 + Cabin: cateborical
 + Embarked: categorical
+
+比如Pclass，如果它是numerical，我们可以说第一类和第二类之间的差异等于第二类和第三类之间的差异，但是Pclass实际上是ordinal的，因为我们并不清楚两个差异是否相等。
 
 为什么要这么做？
 1. 模型和预处理高度相关
@@ -203,7 +204,7 @@ pclass和目标之间很明显不是线性的情况，但如果我们要使用�
 </p>
 
 ### 1.7.1 Feature Preprocessing
-#### a. scaling
+#### a. Scaling
 + scaling对于KNN和linear都会造成影响；regularization和feature scaling是成正比的
 + gradient descent会受scaling的巨大影响
 + KNN中很重要
@@ -223,7 +224,7 @@ pclass和目标之间很明显不是线性的情况，但如果我们要使用�
   <img src="../res/img/img11.png" width="500"/>
 </p>
 
-#### b. outliers
+#### b. Outliers
 对于线性模型来说，outlier是影响结果的重要因素
 
 <p align="center">
@@ -232,14 +233,14 @@ pclass和目标之间很明显不是线性的情况，但如果我们要使用�
 
 解决方式：设定upper bound和lower bound（比如1%和99%），被称为winsorization（极值调整）
 
-#### c. rank
+#### c. Rank
 基本思路：sets spaces between proper assorted values to be equal。对于有outlier的情况，rank的处理方式可能会好于MinMaxScaler，因为rank transformation可以将异常值更接近其他对象而不是忽略他们。
 
 <p align="center">
   <img src="../res/img/img13.png" width="500"/>
 </p>
 
-### d. other
+#### d. Other
 <p align="center">
   <img src="../res/img/img14.png" width="500"/>
 </p>
@@ -247,4 +248,47 @@ pclass和目标之间很明显不是线性的情况，但如果我们要使用�
 ### 1.7.2 Feature generation
 Ways to proceed:
 1. prior knowledge
-2. EDA
+2. EDA (Exploratory Data Analysis)
+
+比如，根据面积和价格创建变量价格每平方米：
+<p align="center">
+  <img src="../res/img/img15.png" width="500"/>
+</p>
+比如，根据纵向距离和横向距离创建直接距离：
+<p align="center">
+  <img src="../res/img/img16.png" width="500"/>
+</p>
+比如，根据价格创建小数价格和整数价格：
+<p align="center">
+  <img src="../res/img/img17.png" width="500"/>
+</p>
+
+**结论：**
+<p align="center">
+  <img src="../res/img/img18.png" width="500"/>
+</p>
+
+### 1.8 Categorical and ordinal features
+
+Ordinal features:
+ordinal（有顺序的categorical）：
+<p align="center">
+  <img src="../res/img/img19.png" width="500"/>
+</p>
+
+#### Label encoding
+以embarked为例：
+<p align="center">
+  <img src="../res/img/img20.png" width="500"/>
+</p>
+
+#### Frequency encoding
+但如果出现频率相同，那么这个encoding方式将无法区别他们
+<p align="center">
+  <img src="../res/img/img21.png" width="500"/>
+</p>
+
+#### One-hot encoding
+<p align="center">
+  <img src="../res/img/img22.png" width="500"/>
+</p>
