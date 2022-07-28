@@ -304,3 +304,23 @@ ordinal（有顺序的categorical）：
 <p align="center">
   <img src="../res/img/img24.png" width="500"/>
 </p>
+
+## 1.9 Datetime and coordinates
+### 1.9.1 Date and time
+
+#### a. Time moments in a period（当前时间）
+
+Day number in week, month, season, year, second, minute, hour
+
+#### b. Time passed since particular event
+
+<p align="center">
+  <img src="../res/img/img25.png" width="500"/>
+</p>
+
+比如，对于销售量和Date来说，我们可以进行如下的feature generation：
+<p align="center">
+  <img src="../res/img/img26.png" width="500"/>
+</p>
+
+### 1.9.2 Coordinates
