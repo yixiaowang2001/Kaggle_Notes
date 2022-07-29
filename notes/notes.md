@@ -362,7 +362,9 @@ missing value可能不是一个数字，可能是一个空字符串、-1、99等
   + 优点：有利于linear model和神经网络
   + 缺点：决策树可能会很难选择有缺失值的observation
 3. Reconstruct value
-构建"isNull"特征：
+  1. 构建"isNull"特征：
 <p align="center">
   <img src="../res/img/img33.png" width="500"/>
 </p>
+
+  2. 如果是连续数据，则直接重构（不怎么出现这种情况）
