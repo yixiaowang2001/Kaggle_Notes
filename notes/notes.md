@@ -367,4 +367,35 @@ missing value可能不是一个数字，可能是一个空字符串、-1、99等
   <img src="../res/img/img33.png" width="500"/>
 </p>
 
-  + 如果是连续数据，则直接重构（不怎么出现这种情况）
+  + 如果是连续数据（比如日期），则直接重构（不怎么出现这种情况）
+  <p align="center">
+    <img src="../res/img/img34.png" width="500"/>
+  </p>
+
+  + 如果要基于缺失值生成新的数据，那么在重构缺失值的时候就需要非常小心，很多情况下我们选择直接删除缺失值
+  <p align="center">
+    <img src="../res/img/img35.png" width="500"/>
+  </p>
+
+#### 1.10.3 Missing value related
+我们可以把outliers当成缺失值来处理；对于出现在test data里但并没有出现在train data中的类别，outliers被划分的类别就会作为test data新出现的类别的参照。
+
+比如，A、B、C是三个火车站，我们根据其出现次数来进行encoding：在训练数据集中，A为6，B为3，D为1。当测试数据集中出现了新的类别C，C由于也只出现了一次，所以被encoding为1，那么模型就会对待D一样去对待C。这样得到的最终结果就是可以成功被可视化的。
+<p align="center">
+  <img src="../res/img/img36.png" width="500"/>
+</p>
+
+**总结：**
+<p align="center">
+  <img src="../res/img/img37.png" width="500"/>
+</p>
+
+## 1.11 Feature extraction from texts and images
+对于单一文字或图像：
++ 文字：Use search engines in order to find similar text
++ 图像：神经网络（CNN）
+
+但当图像属于附加信息：
+比如Titanic中的name，就属于附加信息，我们要从中找到有用信息。同时还有根据text和image来判断广告是否重复的竞赛。
+
+### 1.11.1 Text
