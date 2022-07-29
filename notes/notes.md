@@ -331,3 +331,38 @@ datetime_feature_1 - datetime_feature_2
 </p>
 
 ### 1.9.2 Coordinates
+
+知道一个地点的坐标后，就可以得知其他相关地址或距离的信息，比如最近的医院、最近的超市、最近的车站：
+<p align="center">
+  <img src="../res/img/img29.png" width="500"/>
+</p>
+
+如果是训练决策树的话，可以略微rotate coordinates as new features
+<p align="center">
+  <img src="../res/img/img30.png" width="500"/>
+</p>
+
+**总结：**
+<p align="center">
+  <img src="../res/img/img31.png" width="500"/>
+</p>
+
+## 1.10 Handling missing values
+### 1.10.1 寻找missing value
+missing value可能不是一个数字，可能是一个空字符串、-1、99等等。通过构建histogram来查找missing value（比如左边的histogram，-1很明显有很多重复值，所以-1可能为missing value）：
+<p align="center">
+  <img src="../res/img/img32.png" width="500"/>
+</p>
+
+### 1.10.2 Fill NA approaches
+1. -999, -1, etc
+  + 优点：决策树可能会将其归为单独的类别
+  + 缺点：linear model和神经网络会被影响
+2. Mean, median
+  + 优点：有利于linear model和神经网络
+  + 缺点：决策树可能会很难选择有缺失值的observation
+3. Reconstruct value
+构建"isNull"特征：
+<p align="center">
+  <img src="../res/img/img33.png" width="500"/>
+</p>
