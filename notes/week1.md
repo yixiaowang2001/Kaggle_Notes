@@ -301,7 +301,7 @@ ordinal（有顺序的categorical）：
   <img src="../res/img/week1/img23.png" width="500"/>
 </p>
 
-## 8.2 总结
+### 8.2 总结
 <p align="center">
   <img src="../res/img/week1/img24.png" width="500"/>
 </p>
@@ -343,7 +343,7 @@ datetime_feature_1 - datetime_feature_2
   <img src="../res/img/week1/img30.png" width="500"/>
 </p>
 
-### 9.2 总结
+### 9.3 总结
 <p align="center">
   <img src="../res/img/week1/img31.png" width="500"/>
 </p>
@@ -436,7 +436,14 @@ missing value可能不是一个数字，可能是一个空字符串、-1、99等
 
 实现方面（char N-gram要添加analyzer）：
 <p align="center">
-  <img src="../res/img/img43.png" width="500"/>
+  <img src="../res/img/week1/img43.png" width="500"/>
 </p>
+
+#### (Additional) Text preprocessing
+1. Lowercase
+2. Lemmatization
+3. Stemming
+
+##### Stopwords
 
 #### b. Embeddings(~word2vec)
