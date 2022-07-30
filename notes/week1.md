@@ -400,6 +400,9 @@ missing value可能不是一个数字，可能是一个空字符串、-1、99等
 比如Titanic中的name，就属于附加信息，我们要从中找到有用信息。同时还有根据text和image来判断广告是否重复的竞赛。
 
 ### 11.1 Text
+<p align="center">
+  <img src="../res/img/week1/img48.png" width="500"/>
+</p>
 
 #### a. Bag of words
 创建特征：把每个单词作为一列（忽略大小写），然后记录每句话内单词出现的频率。
@@ -457,9 +460,14 @@ missing value可能不是一个数字，可能是一个空字符串、-1、99等
   <img src="../res/img/week1/img46.png" width="500"/>
 </p>
 
-**Conclusion: pipeline:**
+**Pipeline:**
+（第二步是Bag of words approach，创建一个dataframe：row代表text，column代表每个unique的单词）
 <p align="center">
   <img src="../res/img/week1/img47.png" width="500"/>
 </p>
 
 #### b. Embeddings(~word2vec)
+将每个单词放入复杂空间内，同样被放在于目标词similar的text里面的单词会与目标词的向量非常接近；并且期望向量的加减能make sense
+<p align="center">
+  <img src="../res/img/week1/img48.png" width="500"/>
+</p>
