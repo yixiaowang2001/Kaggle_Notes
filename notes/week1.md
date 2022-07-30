@@ -439,11 +439,27 @@ missing value可能不是一个数字，可能是一个空字符串、-1、99等
   <img src="../res/img/week1/img43.png" width="500"/>
 </p>
 
-#### (Additional) Text preprocessing
-1. Lowercase
-2. Lemmatization
-3. Stemming
+**Text preprocessing:**
+1. Lowercase：减少column数量，因为首字母大写；统一文字记录数量（sklearn的configurer在default情况下就能完成这一点）
+<p align="center">
+  <img src="../res/img/week1/img44.png" width="500"/>
+</p>
 
-##### Stopwords
+2. Lemmatization / Stemming：单词形式的转换（比如对于saw来说，stemming回返回s，而lemmatization会返回see or saw（取决于文本））
+<p align="center">
+  <img src="../res/img/week1/img45.png" width="500"/>
+</p>
+
+3. Stopwords（没啥用的词，包里面都有（NLTK和sklearn的CountVector））
+  + Articles or prepositions
+  + Very common words
+<p align="center">
+  <img src="../res/img/week1/img46.png" width="500"/>
+</p>
+
+**Conclusion: pipeline:**
+<p align="center">
+  <img src="../res/img/week1/img47.png" width="500"/>
+</p>
 
 #### b. Embeddings(~word2vec)
