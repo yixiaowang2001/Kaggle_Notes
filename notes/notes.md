@@ -399,3 +399,12 @@ missing value可能不是一个数字，可能是一个空字符串、-1、99等
 比如Titanic中的name，就属于附加信息，我们要从中找到有用信息。同时还有根据text和image来判断广告是否重复的竞赛。
 
 ### 1.11.1 Text
+
+#### a. Bag of words
+创建特征：把每个单词作为一列（忽略大小写），然后记录每句话内单词出现的频率。
+
+<p align="center">
+  <img src="../res/img/img38.png" width="500"/>
+</p>
+
+#### b. Embeddings(~word2vec)
