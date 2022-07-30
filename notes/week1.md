@@ -473,7 +473,7 @@ missing value可能不是一个数字，可能是一个空字符串、-1、99等
 </p>
 
 **Words:** Word2vec（一般需要很长训练时间，在训练前可以预处理文本）, Glove, FastText, etc
-**Sentences:** Doc2vec, etc
+<br>**Sentences:** Doc2vec, etc
 
 #### c. 比较
 <p align="center">
@@ -481,6 +481,9 @@ missing value可能不是一个数字，可能是一个空字符串、-1、99等
 </p>
 
 ### 11.2 Images
+每层神经网络都会有相应的输出，称为descriptors。Later descriptors会更相似于输入，而earlier descriptors会拥有更多的独立文本信息。
 <p align="center">
   <img src="../res/img/week1/img51.png" width="500"/>
 </p>
+
+我们可以略微调整预先训练模型（fine-tuning）来获得我们更想要的输出，比如VGG、RestNet等
