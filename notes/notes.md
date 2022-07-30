@@ -408,8 +408,8 @@ missing value可能不是一个数字，可能是一个空字符串、-1、99等
 </p>
 
 对于上述特征记录，我们还要对其进行缩放：
-1. 目的：增加样本的可比较性；方式：Term frequency
-2. 目的：强化更重要特征的权重，削弱无用的特征的权重；方式：Inverse document frequency
+1. 目的：增加样本的可比较性；方式：Term frequency（比如，一段话有100个词，“你好”出现过三次，那么TF就是3/100=0.03）
+2. 目的：强化更重要特征的权重，削弱无用的特征的权重；方式：Inverse document frequency（比如现在有10000段话，而其中100段话都有“你好”，那么IDF就是lg(10000/100)=2）
 
 <p align="center">
   <img src="../res/img/img39.png" width="500"/>
@@ -424,6 +424,18 @@ missing value可能不是一个数字，可能是一个空字符串、-1、99等
 2. 再进行Inverse document frequency的处理
 <p align="center">
   <img src="../res/img/img41.png" width="500"/>
+</p>
+
+与TF和IDF一样有效的方法还有**N-grams**：
+<p align="center">
+  <img src="../res/img/img42.png" width="500"/>
+</p>
+
+将word按照N的大小分开，然后为每个组合创建一个column。有些时候处理按照character处理会比按照word处理要来的出色。Char N-grams还可以帮助模型处理看不见的字（比如，rare forms of already used words）。
+
+实现方面（char N-gram要添加analyzer）：
+<p align="center">
+  <img src="../res/img/img43.png" width="500"/>
 </p>
 
 #### b. Embeddings(~word2vec)
