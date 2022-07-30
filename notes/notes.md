@@ -415,7 +415,15 @@ missing value可能不是一个数字，可能是一个空字符串、-1、99等
   <img src="../res/img/img39.png" width="500"/>
 </p>
 
+以上图的数据为例：
+1. 进行Term frequency的处理（对每行进行处理）
+<p align="center">
+  <img src="../res/img/img40.png" width="500"/>
+</p>
 
-
+2. 再进行Inverse document frequency的处理
+<p align="center">
+  <img src="../res/img/img41.png" width="500"/>
+</p>
 
 #### b. Embeddings(~word2vec)
