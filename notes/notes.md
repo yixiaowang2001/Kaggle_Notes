@@ -407,4 +407,15 @@ missing value可能不是一个数字，可能是一个空字符串、-1、99等
   <img src="../res/img/img38.png" width="500"/>
 </p>
 
+对于上述特征记录，我们还要对其进行缩放：
+1. 目的：增加样本的可比较性；方式：Term frequency
+2. 目的：强化更重要特征的权重，削弱无用的特征的权重；方式：Inverse document frequency
+
+<p align="center">
+  <img src="../res/img/img39.png" width="500"/>
+</p>
+
+
+
+
 #### b. Embeddings(~word2vec)
