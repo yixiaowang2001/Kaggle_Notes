@@ -469,5 +469,18 @@ missing value可能不是一个数字，可能是一个空字符串、-1、99等
 #### b. Embeddings(~word2vec)
 将每个单词放入复杂空间内，同样被放在于目标词similar的text里面的单词会与目标词的向量非常接近；并且期望向量的加减能make sense
 <p align="center">
-  <img src="../res/img/week1/img48.png" width="500"/>
+  <img src="../res/img/week1/img49.png" width="500"/>
+</p>
+
+**Words:** Word2vec（一般需要很长训练时间，在训练前可以预处理文本）, Glove, FastText, etc
+**Sentences:** Doc2vec, etc
+
+#### c. 比较
+<p align="center">
+  <img src="../res/img/week1/img50.png" width="500"/>
+</p>
+
+### 11.2 Images
+<p align="center">
+  <img src="../res/img/week1/img51.png" width="500"/>
 </p>
