@@ -486,4 +486,24 @@ missing value可能不是一个数字，可能是一个空字符串、-1、99等
   <img src="../res/img/week1/img51.png" width="500"/>
 </p>
 
-我们可以略微调整预先训练模型（fine-tuning）来获得我们更想要的输出，比如VGG、RestNet等
+我们可以略微调整预先训练模型（fine-tuning）来获得我们更想要的输出，比如VGG、RestNet等。在data小或者我们为了解决和模型相似问题的时候，fine-tuning会比从头训练模型要更合理。
+
+Fine-tuning举例（区别四个屋顶）：
+<p align="center">
+  <img src="../res/img/week1/img52.png" width="500"/>
+</p>
+
+我们优先考虑VGG-16，因为它是trained on the 1000 classes（最后的输出结果为4个）。所以我们可以：
+1. 将最后的输出层从1000变为4，然后将learning rate更改低1000倍左右，就可以获得一个不错的输出。Fine-tuning使用库Keras、Pytorch、Caffe。
+3. 增加训练图像的数量（image augmentation：比如将图像旋转180度（分组不变），将图像旋转90度（改变分组））通常情况下，image augmentation包括裁剪、旋转、噪声等等。
+
+<p align="center">
+  <img src="../res/img/week1/img53.png" width="500"/>
+</p>
+
+还有一点需要注意的是，如果想修改或是直接从scratch训练CNN，记得不要overfit。
+
+### 11.3 总结
+<p align="center">
+  <img src="../res/img/week1/img54.png" width="500"/>
+</p>
