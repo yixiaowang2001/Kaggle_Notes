@@ -240,3 +240,16 @@ traintest.T.drop_duplicates()
 
 在上面这个例子中，我们可以看出end of train set与前面的数据是不一样的，这就算是一个有用的信息。
 
+### 6 案例：Springleaf
+[Springleaf竞赛详细](https://www.kaggle.com/c/springleaf-marketing-response)：预测用户是否会对Springleaf提供的直邮报价作出回应
+
+#### Data Overview
+1. print train和test data的shape，我们可以发现train data多一个column，这可能是我们的output。
+<p align="center">
+<img src="../res/img/week2/img28.png" width="500"/>
+</p>
+
+2. 然后我们粗略观察数据，发现test和train的ID是不同的，也就是说，这两个数据集是不重叠的；由此推测，可能是数据方对于所有数据进行random sampling。
+
+
+
