@@ -153,3 +153,8 @@ plt.scatter(range(len(x)), x, c=y)
 <p align="center">
 <img src="../res/img/week2/img17.png" width="500"/>
 </p>
+
+如果是分类任务，我们可以很清晰地看出数据的分类和标签；我们也可以通过scatter plot来看test data和train data的区别：
+<p align="center">
+<img src="../res/img/week2/img18.png" width="500"/>
+</p>
