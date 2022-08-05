@@ -154,7 +154,47 @@ plt.scatter(range(len(x)), x, c=y)
 <img src="../res/img/week2/img17.png" width="500"/>
 </p>
 
-如果是分类任务，我们可以很清晰地看出数据的分类和标签；我们也可以通过scatter plot来看test data和train data的区别：
+1. 如果是分类任务，我们可以很清晰地看出数据的分类和标签
+2. 我们也可以通过scatter plot来看test data和train data的区别：
 <p align="center">
 <img src="../res/img/week2/img18.png" width="500"/>
 </p>
+
+3. 可以看出x1和x2的numerical的区别：
+<br>比如下图中，x2是小于1-x1的：
+<p align="center">
+<img src="../res/img/week2/img19.png" width="500"/>
+</p>
+<br>比如下图中，我们可以根据每个三角形创建一个new feature：
+<p align="center">
+<img src="../res/img/week2/img20.png" width="500"/>
+</p>
+
+可以使用Pandas的`scatter_matrix()`来直接对于每组数据绘制散点图并组成matrix。
+
+### 4.5 Correlation plots
+```python 
+df.corr()
+plt.matshow( ... )
+```
+<p align="center">
+<img src="../res/img/week2/img21.png" width="500"/>
+<img src="../res/img/week2/img22.png" width="500"/>
+</p>
+
+如果matrix很乱，我们可以使用聚类重新归类一下，然后再进行绘图，如右上图。
+
+### 4.6 Groups
+我们还可以对于每个feature取mean，然后绘制column vs mean的图。如右下图，可以再对feature mean进行排序，尝试创建一个新的feature基于此。
+
+```python
+df.mean().sort_values().plot(style='.')
+```
+
+<p align="center">
+<img src="../res/img/week2/img23.png" width="500"/>
+<img src="../res/img/week2/img24.png" width="500"/>
+</p>
+
+## 5 Dataset cleaning
+
