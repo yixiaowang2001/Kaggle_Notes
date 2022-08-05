@@ -73,7 +73,83 @@ EDA最好的方式：visualization
 + x1是文字记录或是categorical data
 + x2和x3是binary
 + x4是numerical
-+ x5是categorical或numerical（如果x5是numerical，它有可能是event calendar，因为数据类型是整数）
++ x5是categorical或numerical（如果x5是numerical，它有可能是event counter，因为数据类型是整数）
 <p align="center">
 <img src="../res/img/week2/img3.png" width="500"/>
+</p>
+
+### 3.3 实用函数
++ df.dtypes：获得数据集每一列数据的类型（float：numerical；integer：event count、binary、categorical；object：anything）
++ df.info()：print表格信息
++ x.value_counts()：计算数据重复次数
++ x.isnull()：找出缺失值
+
+## 4 Visualization
++ Explore individual features
+  + Histograms
+  + Plots
+  + Statistics
++ Explore feature relations
+  + Scatter plots
+  + Correlation plots
+  + Plot(index vs. feature statistics)
+
+### 4.1 Histogram
+
+```python
+plt.hist(x)
+```
+
+#### 直方图也可能具有误导性
+<br>比如左下图，可能粗略看图片认为有很多0值，但其实看右下图（将左下图的y轴做对数处理）的时候，会发现很清晰的分布。
+<br>Never make conclusion on a single plot!
+<p align="center">
+<img src="../res/img/week2/img11.png" width="500"/>
+<img src="../res/img/week2/img12.png" width="500"/>
+</p>
+
+#### Peak可以告诉我们什么？
+比如右上图，peak其实是这组数据的平均值，说明数据提供者可能使用平均值来填补了缺失值，也就是说有很多数据其实是missing的。
+
+我们可以将平均值重新替换为null，因为有一些特殊算法（比如XBoost中）可以处理缺失值。也可以将平均值替换为-999。也可以创建一个新的column表示改值是缺失的状态。
+
+### 4.2 Plot 
+
+#### Index versus value
+
+```python
+plt.plot(x,'.')
+```
+<p align="center">
+<img src="../res/img/week2/img13.png" width="500"/>
+</p>
+
++ 横线代表重复值
++ Randomness over indices：没有一条垂直线，说明数据是被shuffle过的
+
+#### Index versus value
+
+```python
+plt.scatter(range(len(x)), x, c=y)
+```
+<p align="center">
+<img src="../res/img/week2/img14.png" width="500"/>
+</p>
+
+我们可以看到数据被很清晰的分类了，并且在这种情况下数据并没有被shuffle。
+
+### 4.3 Statistics
+可以使用pandas来获取feature statistics：
+<p align="center">
+<img src="../res/img/week2/img15.png" width="500"/>
+</p>
+
+使用其他工具来制作plot：
+<p align="center">
+<img src="../res/img/week2/img16.png" width="500"/>
+</p>
+
+### 4.4 Scatter plots
+<p align="center">
+<img src="../res/img/week2/img17.png" width="500"/>
 </p>
