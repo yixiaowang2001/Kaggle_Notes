@@ -198,3 +198,45 @@ df.mean().sort_values().plot(style='.')
 
 ## 5 Dataset cleaning
 
+### 5.1 数据可能问题
+由于竞赛数据通常是来自主办方的一部分数据，那么这些数据有时候可能出先一些问题。
+
+<p align="center">
+<img src="../res/img/week2/img25.png" width="500"/>
+</p>
+
+1. f0：我们会发现列f0的数值全部都是一样的，说明这个数据可能是原数据公司筛选数据时所用到的（比如某个特定年份下的数据），所以这个列我们需要删除。
+
+2. f1：train data比test data拥有更多的分类（分类G），所以我们要决定这个train data是否应该保留（可以考虑训练两个模型）。
+
+3. f2/f3：f2和f3是完全一致的，所以我们可以考虑drop duplicate：
+```python
+traintest.T.drop_duplicates()
+```
+
+4. f4/f5：categorical column 可能也会重复，如果我们改变A、B、C的顺序的话（C、A、B），会发现两个columnn是完全一致的：
+```python
+for f in categorical_feats:
+  traintest[f] = traintest[f].factorize()
+
+traintest.T.drop_duplicates()
+```
+
+### 5.2 Duplicated rows
+有些行可能数据所有变量相同但是输出不同，我们需要理解数据（数据含义、为什么会产生），然后去决定是否需要删除：
+<p align="center">
+<img src="../res/img/week2/img26.png" width="500"/>
+</p>
+
+### 5.3 Check if the dataset is shuffled
+如果不是的话，有很大概率可以找到data leakage。
+
+方法：
+插入一个target column versus row index，然后也可以smooth the value with running average。如果数据被shuffled properly，我们可以看到一些oscillation around mean value（蓝色虚线）。
+
+<p align="center">
+<img src="../res/img/week2/img27.png" width="500"/>
+</p>
+
+在上面这个例子中，我们可以看出end of train set与前面的数据是不一样的，这就算是一个有用的信息。
+
