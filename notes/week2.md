@@ -5,7 +5,7 @@ Week 2
 
 EDA最好的方式：visualization
 
-### 1.1 Understand the data
+## 2 Understand the data
   + Get domain knowledge:
   <br>理解列名称、列之间的关系
   + Check if the data is intuitive:
@@ -18,7 +18,7 @@ EDA最好的方式：visualization
   <br>It is crucial to undersatnd the generation process to set up a proper validation scheme
 
 
-### 1.2 Anonymized data
+## 3 Anonymized data
 比如，text和encoded text的对比：
 <p align="center">
 <img src="../res/img/week2/img2.png" width="500"/>
@@ -32,7 +32,8 @@ EDA最好的方式：visualization
     + Find relaations between pairs
     + Find feature groups
 
-代码部分：对于Anonymized data的处理
+### 3.1 举例
+对于Anonymized data的处理
 <br>使用随机森林对变量的重要性进行排序，x轴是变量名，y轴是变量的重要程度。
 <br>我们可以从图中看出，**x8**似乎是一个很重要的变量。
 <p align="center">
@@ -66,3 +67,13 @@ EDA最好的方式：visualization
 根据这个数据我们可以初步看出，年份集中分布在1970附近，1899多可能是因为这是系统的默认值，而999和0可能是一些非正常数据。
 
 如果对于线性模型，我们可以添加一个新的变量比如age group之类的，但对于目前这个比赛意义不大。
+
+### 3.2 类型分析
+对于下面表格内的数据来说，我们还可以对每列进行类型分析：
++ x1是文字记录或是categorical data
++ x2和x3是binary
++ x4是numerical
++ x5是categorical或numerical（如果x5是numerical，它有可能是event calendar，因为数据类型是整数）
+<p align="center">
+<img src="../res/img/week2/img3.png" width="500"/>
+</p>
