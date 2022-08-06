@@ -273,9 +273,49 @@ print train和test data的shape，我们可以发现train data多一个column，
 同样，有很多列的空值数量也是相似的，我们可以得到一个假设：column order is not random。
 
 ### b. Data cleaning
-由于我们没有任何列表名称，所以我们需要决定数据类型（将train和test合并）：
+首将train和test合并：
 <p align="center">
 <img src="../res/img/week2/img32.png" width="500"/>
 </p>
 
-+ 我们先判断每个column有多少个unique value，然后剔除只有一个unique value的column
+#### 1. 删除constant feature
+我们先判断每个column有多少个unique value，然后剔除只有一个unique value的column：
+```python
+constant_features = feats_counts.loc[feats_counts==1].index.tolist()
+print(constant_features)
+
+traintest.drop(constant_features.axis=1, inplace=True)
+```
+
+#### 2. 删除重复数据
+1. 用NaN填充空值
+2. 复制数据集
+3. 对每个column进行重新编码
+4. 然后使用两个迭代器来获得duplicated cols
+5. 暂存删除的column（以便restore）
+6. 删除重复column
+```python
+# 1
+traintest.fillna('NaN', inplace=True)
+
+# 2
+train_enc = pd.DataFrame(index = train.index)
+
+# 3
+for col in tqdm_notebook(traintest.columns):
+  train_enc[col] = train[col].factorize()[0]
+
+# 4
+dup_cols = {}
+for i, c1 in enumerate(tqdm_notebook(train_enc.columns)):
+  for c2 in train_enc.columns[i + 1:]:
+    if c2 not in dup_cols and np.all(train_enc[c1] == train_enc[c2]):
+      dup_cols[c2] = c1
+
+# 5
+import cPickle as pickle
+pickle.dump(dup_cols, open('dup_cols.p', 'w'), protocol=pickle.HIGHEST_PROTOCOL)
+
+# 6
+traintest.drop(dup_cols.keys(), axis=1, inplace=True)
+```
