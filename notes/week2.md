@@ -240,16 +240,42 @@ traintest.T.drop_duplicates()
 
 在上面这个例子中，我们可以看出end of train set与前面的数据是不一样的，这就算是一个有用的信息。
 
-### 6 案例：Springleaf
+## 6 案例：Springleaf
 [Springleaf竞赛详细](https://www.kaggle.com/c/springleaf-marketing-response)：预测用户是否会对Springleaf提供的直邮报价作出回应
 
-#### Data Overview
-1. print train和test data的shape，我们可以发现train data多一个column，这可能是我们的output。
+### a. Data Overview
+
+#### 1. 打印test和train的shape
+print train和test data的shape，我们可以发现train data多一个column，这可能是我们的output。
 <p align="center">
 <img src="../res/img/week2/img28.png" width="500"/>
 </p>
 
-2. 然后我们粗略观察数据，发现test和train的ID是不同的，也就是说，这两个数据集是不重叠的；由此推测，可能是数据方对于所有数据进行random sampling。
+#### 2. 粗略观察数据
+然后我们使用`head()`粗略观察数据，发现test和train的ID是不同的，也就是说，这两个数据集是不重叠的；由此推测，可能是数据方对于所有数据进行random sampling。
+<p align="center">
+<img src="../res/img/week2/img29.png" width="500"/>
+</p>
 
+#### 3. 判断缺失值
++ 判断每个object（也就是每个row）有多少缺失值：
+<p align="center">
+<img src="../res/img/week2/img30.png" width="500"/>
+</p>
 
+但根据输出，有很多行的空值数量是相似的，我们可以根据假设：row order has some structure or some pattern，也就是说我们或许可以使用row index作为我们的分类器的一个新的feature。
 
++ 判断每个column有多少缺失值：
+<p align="center">
+<img src="../res/img/week2/img31.png" width="500"/>
+</p>
+
+同样，有很多列的空值数量也是相似的，我们可以得到一个假设：column order is not random。
+
+### b. Data cleaning
+由于我们没有任何列表名称，所以我们需要决定数据类型（将train和test合并）：
+<p align="center">
+<img src="../res/img/week2/img32.png" width="500"/>
+</p>
+
++ 我们先判断每个column有多少个unique value，然后剔除只有一个unique value的column
