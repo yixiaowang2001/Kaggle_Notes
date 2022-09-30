@@ -319,3 +319,42 @@ pickle.dump(dup_cols, open('dup_cols.p', 'w'), protocol=pickle.HIGHEST_PROTOCOL)
 # 6
 traintest.drop(dup_cols.keys(), axis=1, inplace=True)
 ```
+
+### c. Determine types
+
+1. 找到每个column有多少个unique value
+```python
+nunique = train.nunique(dropna=False)
+nunique
+```
+
+2. 根据unique value的个数画histogram
+```python
+plt.figure(figsize=(14.6))
+  = plt.hist(nuniqe.astype(float)/train.shape[0], bins=100)
+```
+<p align="center">
+<img src="../res/img/week2/img33.png" width="500"/>
+</p>
+x轴越偏右，unique value就越多。
+
+3. 进一步观察unqiue value数量多的feature
+```python
+mask = (nunique.astype(float)/train.shape[0] > 0.8)
+train.loc[:, mask]
+```
+<p align="center">
+<img src="../res/img/week2/img34.png" width="500"/>
+</p>
+根据观察，发现这两个column都是integer并且数字很大，所以我们可以基于此进行推断：column可能为account number或者是millisecond。
+
+4. 观察unique value数量中等的feature
+```python
+mask = (nunique.astype(float)/train.shape[0] < 0.8) & (nunique.astype(float)/tran.shape[0] > 0.4)
+train.loc[:25, mask]
+```
+<p align="center">
+<img src="../res/img/week2/img35.png" width="500"/>
+</p>
+
+根据观察，column names是连续的，也就是说数据有可能是没有被shuffle过的，很可能是被group了后输出的结果。按行观察数据，我们发现一行中有很多相似值
