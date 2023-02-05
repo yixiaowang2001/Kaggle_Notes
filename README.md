@@ -5,8 +5,8 @@
 ## 1 Course Overview
 
 - [X] [1. Week 1](https://github.com/yixiaowang2001/Kaggle_Notes/edit/main/week1) <img align="right" src="https://progress-bar.dev/0">
-  + Introduction to compettions & recap
-  + Feature preprocessing & extraction
+  1. Introduction to compettions & recap
+  2. Feature preprocessing & extraction
 - [X] [2. Week 2](https://github.com/yixiaowang2001/Kaggle_Notes/edit/main/week2) <img align="right" src="https://progress-bar.dev/0">
 - [X] [3. Week 3](https://github.com/yixiaowang2001/Kaggle_Notes/edit/main/week3) <img align="right" src="https://progress-bar.dev/0">
 - [X] [4. Week 4](https://github.com/yixiaowang2001/Deep-Learning_Notes/tree/main/Course4) <img align="right" src="https://progress-bar.dev/0">
