@@ -8,6 +8,16 @@
   - Introduction to compettions & recap
   - Feature preprocessing & extraction
 - [X] [2. Week 2](https://github.com/yixiaowang2001/Kaggle_Notes/edit/main/week2) <img align="right" src="https://progress-bar.dev/0">
+  - EDA
+  - Validation
+  - Data leaks
 - [X] [3. Week 3](https://github.com/yixiaowang2001/Kaggle_Notes/edit/main/week3) <img align="right" src="https://progress-bar.dev/0">
+  - Metrics
+  - Mean-encodings
 - [X] [4. Week 4](https://github.com/yixiaowang2001/Deep-Learning_Notes/tree/main/Course4) <img align="right" src="https://progress-bar.dev/0">
+  - Advanced features
+  - Hyperparameter optimization
+  - Ensembles
 - [X] [5. Week 5](https://github.com/yixiaowang2001/Deep-Learning_Notes/tree/main/Course4) <img align="right" src="https://progress-bar.dev/0">
+  - Final project
+  - Winning solutions
