@@ -109,3 +109,35 @@
 + Vowpal wabbit: Provide blazing speed when handling really large datasets
 + Libfm(Github), libffm(Github): Implement different types of optimization machines; often used for sparse data like click-through rate prediction
 + Fast_rgf(Github): alternative based method to use in ensembles
+
+## 4 Feature Engineering
+
+### 4.1 Feature Preprocessing
+
+Example: Titanic dataset
+
+<p align="center">
+  <img src="../res/img/img12.png" width="600"/>
+</p>
+
+**Look closer to one predictor and outcome:** Pclass vs. Survival
+
++ Data is not linear -> if implementing linear model, we need to preprocess Pclass -> Example: one-hot encoding
++ However, random forst can not use obe-hot encoding
+
+<p align="center">
+  <img src="../res/img/img13.png" width="600"/>
+</p>
+
+### 4.2 Feature Generation
+
++ If we have know linear relationship and want to inform the model, we can create a feature called "number of weeks passed."
++ However, it is still not working for decision tree
++ **Preprocessing and generation pipelines depend on a model type**
+
+<p align="center">
+  <img src="../res/img/img14.png" width="500"/>
+  <img src="../res/img/img15.png" width="500"/>
+</p>
+
+### 4.3 Numeric Features
