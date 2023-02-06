@@ -141,3 +141,180 @@ Example: Titanic dataset
 </p>
 
 ### 4.3 Numeric Features
+
+#### 4.3.1 Preprocessing
+
+Based on whether the model depends on **scaling**, we can divide models into two parts: decision trees
++ Tree-based models (do not need scaling)
+  + try to find the most useful split for each feature
+  + won't change its behavior and predictions
++  Non-tree-based models: kNN, neural network (desperately need scaling)
+  + Be affected by transformations
+
+<p align="center">
+  <img src="../res/img/img16.png" width="600"/>
+</p>
+
+**Scaling is important for:** kNN, linear model
++ Regularization impact turns out to be proprtional to feature scale
++ Gradient methood can go crazy without scaling
+
+<p align="center">
+  <img src="../res/img/img17.png" width="600"/>
+</p>
+
+#### 4.3.2 Scaling
+
+##### 4.3.2.1 Min-max scaler
+
++ Effect: To [0, 1]
++ Note: Distribution won't change
+
+```Python
+sklearn.preprocessing.MinMaxScaler()
+```
+
+<p align="center">
+  <img src="../res/img/img18.png" width="600"/>
+</p>
+
+##### 4.3.2.2 Standard scaler
+
++ Effect: To mean = 0, std = 1
+
+```Python
+sklearn.preprocessing.StandardScaler()
+```
+
+#### 4.3.3 Preprocessing: outliers
+
+Affect **linear model** the most: both target and train
+
+<p align="center">
+  <img src="../res/img/img19.png" width="600"/>
+</p>
+
+**Winsorization**: (common in financial data) We can clip feature values between two chosen values: lower bound and upper bound -> choose some percentiles (1% & 99%)
+
+<p align="center">
+  <img src="../res/img/img20.png" width="600"/>
+</p>
+
+#### 4.3.4 Preprocessing: rank
+
++ Rank transformation: can be better than min-max scaler if we have outliers -> make outliers closer to other objects
++ **Benifit:** Linear model, kNN, neural networks
+
+<p align="center">
+  <img src="../res/img/img21.png" width="600"/>
+</p>
+
+#### 4.3.5 Other preprocessing methods
+
++ **Benifit:** neural networks
++ Also, try to preprocessing data differently -> benifit: linear model, kNN, neural networks
+
+<p align="center">
+  <img src="../res/img/img22.png" width="600"/>
+</p>
+
+#### 4.3.6 Feature generation
+
++ Creativity
++ Data understanding
+
+<p align="center">
+  <img src="../res/img/img23.png" width="500"/>
+  <img src="../res/img/img24.png" width="500"/>
+</p>
+
+### 4.4 Categorical and Ordinal Features
+
++ Categorical -> order categorical (ordinal) for red box
++ Ordinal:
+  + Categorical varaibles ordered in some meaningful ways
+  + We don't know which difference is bigger
+
+<p align="center">
+  <img src="../res/img/img25.png" width="500"/>
+  <img src="../res/img/img26.png" width="500"/>
+</p>
+
+#### 4.4.1 Label encoding
+
++ Map unique values to different numbers
++ Only work with tree models (tree models can treat numbers differently)
+
+<p align="center">
+  <img src="../res/img/img27.png" width="500"/>
+  <img src="../res/img/img28.png" width="500"/>
+</p>
+
+#### 4.4.2 Freqency encoding
+
++ Store information about distributions
++ **Benifit:** Linear and tree models
++ Useful:
+  + If value frequency is related to it's target value
+  + Less number of splits
++ Note: multiple variables can not be distinguished if they both use frequency encoding
+
+<p align="center">
+  <img src="../res/img/img29.png" width="600"/>
+</p>
+
+#### 4.4.3 Other encodings
+
+##### 4.4.3.1 One-hot encodings
+
+**Benifit:** Non-tree based models -> linear, kNN
+
+<p align="center">
+  <img src="../res/img/img30.png" width="600"/>
+</p>
+
+##### 4.4.3.2 Concatenation features
+
+**Benifit:** Non-tree based models -> linear, kNN
+
+<p align="center">
+  <img src="../res/img/img31.png" width="600"/>
+</p>
+
+### 4.5 Datetime and Coordinate Features
+
+<p align="center">
+  <img src="../res/img/img32.png" width="600"/>
+</p>
+
+#### 4.5.1 Time since
+
+Example: sales data -> time from last campaign / time until next campaign
+
+<p align="center">
+  <img src="../res/img/img33.png" width="500"/>
+  <img src="../res/img/img34.png" width="500"/>
+</p>
+
+#### 4.5.2 Time differences
+
+Example: sales data -> time between two purchase dates
+
+<p align="center">
+  <img src="../res/img/img35.png" width="500"/>
+  <img src="../res/img/img36.png" width="500"/>
+</p>
+
+#### 4.5.3 Coordinates
+
++ Gain information from the surrounding area
+  + Divide the map into squares, get the most expensive flat in each square, add the distances
+  + Use the center of each cluster as important points, add distances
+  + Find special areas (e.g. really old buildings), add distances
++ Calculate aggregated distances from objects in the surrounding area
+  + Caluclate the number of flats in that area (areas of polarity)
+  + Add mean realty price
+
+<p align="center">
+  <img src="../res/img/img37.png" width="600"/>
+</p>
