@@ -9,7 +9,7 @@ Coursera course
 
 | **Week** |                                              **Note**                                             |                                                 **Code**                                                |              **Status**              |                    **Keywords**                     |
 |:--------:|:-------------------------------------------------------------------------------------------------:|:-------------------------------------------------------------------------------------------------------:|:------------------------------------:|:-------------------------------------------------------------------------------------------------------:|
-|   week1  | [week1.md](https://github.com/yixiaowang2001/Kaggle_Notes/blob/main/note/week1.md) | / | ![pb1](https://progress-bar.dev/50) |  Intro to Competitions & Recap, Feature Preprocessing & Extraction |
+|   week1  | [week1.md](https://github.com/yixiaowang2001/Kaggle_Notes/blob/main/note/week1.md) | / | ![pb1](https://progress-bar.dev/90) |  Intro to Competitions & Recap, Feature Preprocessing & Extraction |
 |   week2  | [week2.md](https://github.com/yixiaowang2001/Kaggle_Notes/blob/main/note/week2.md) | / |  ![pb2](https://progress-bar.dev/0) | EDA, Validation, Data Leaks |
 |   week3  | [week3.md](https://github.com/yixiaowang2001/Kaggle_Notes/blob/main/note/week3.md) | / |  ![pb3](https://progress-bar.dev/0)  |  Metrics, Mean-encoding  |
 |   week4  | [week4.md](https://github.com/yixiaowang2001/Kaggle_Notes/blob/main/note/week4.md) | / |  ![pb4](https://progress-bar.dev/0)  |  Advanced Features, Hyperparameter Optimization, Ensembles |

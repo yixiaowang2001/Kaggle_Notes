@@ -324,3 +324,145 @@ Example: sales data -> time between two purchase dates
 <p align="center">
   <img src="../res/img/img38.png" width="600"/>
 </p>
+
+## 5 Missing Values
+
+### 5.1 Types of Missing Values
++ N/A values
++ Empty strings
++ -1
++ Very large numbers
++ -99999 less)
++ 999
++ 99
+
+Example: matrix of samples and features
+
+<p align="center">
+  <img src="../res/img/img39.png" width="600"/>
+</p>
+
+#### 5.1.1 Hidden NaNs
++ Left: missing values are replaced by -1
++ Right: missing values are replaced by the average (right plot is on log scale)
+
+<p align="center">
+  <img src="../res/img/img40.png" width="600"/>
+</p>
+
+### 5.2 Fillna Approach
+
+1. -999, 1, etc.
+  + Pros: can possibly treat missing values as a separate category
+  + Cons: linear models and neural networks might be suffered
+2. Mean / median
+  + Pros: works for linear models and neural networks
+  + Cons: hard to select objects with missing values in the first place
+3. Reconstract value
+
+#### 5.2.1 "Is null" feature
+
++ Pros: solve problems with trees and neural netorks (with meanmedian)
++ Cons: double the number of columns in the dataset
+
+<p align="center">
+  <img src="../res/img/img41.png" width="600"/>
+</p>
+
+#### 5.2.2 Reconstract value
+
+For series data only (continuous, like date)
+
+<p align="center">
+  <img src="../res/img/img42.png" width="600"/>
+</p>
+
+**Be careful**
++ Avoid replacing missing values before feature generation
++ Left: difference will be very large
++ Right: if the data is grouped by a categorical data and we are calculating mean / median, missing values with numbers will affect the result
+
+<p align="center">
+  <img src="../res/img/img43.png" width="500"/>
+  <img src="../res/img/img44.png" width="500"/>
+</p>
+
+**What should we do**
++ Categorical encoding (feature generation) -> ignore missing values
++ Classification task -> treat missing values as outliers
+  + Useful: when there is a new group of data in the test set
+
+<p align="center">
+  <img src="../res/img/img45.png" width="600"/>
+</p>
+
+### 5.3 Summary 
+
+<p align="center">
+  <img src="../res/img/img46.png" width="600"/>
+</p>
+
+## 6 Texts & Images
+
+### 6.1 Texts
+
+#### 6.1.1 Text to vectors
+
+<p align="center">
+  <img src="../res/img/img47.png" width="600"/>
+</p>
+
+##### 6.1.1.1 Bag of Words
+
+Create a matrix and count the number of appearance for each word in those sentences
+
+<p align="center">
+  <img src="../res/img/img48.png" width="600"/>
+</p>
+
+**TFiDF**
++ Decrease the significance of widespread words
++ Require future scaling
+
+<p align="center">
+  <img src="../res/img/img49.png" width="600"/>
+</p>
+
+Example
+
+<p align="center">
+  <img src="../res/img/img50.png" width="500"/>
+  <img src="../res/img/img51.png" width="500"/>
+</p>
+
+**N-grams**
+
+<p align="center">
+  <img src="../res/img/img52.png" width="600"/>
+</p>
+
+#### 6.1.2 Text processing
+
+##### 6.1.2.1 Lowercase
+
+<p align="center">
+  <img src="../res/img/img53.png" width="600"/>
+</p>
+
+##### 6.1.2.2 Lemmatization and stemming
+
+<p align="center">
+  <img src="../res/img/img54.png" width="600"/>
+</p>
+
+##### 6.1.2.3 Stopwords
+
+<p align="center">
+  <img src="../res/img/img55.png" width="600"/>
+</p>
+
+### 6.2 Summary
+
+<p align="center">
+  <img src="../res/img/img56.png" width="600"/>
+</p>
