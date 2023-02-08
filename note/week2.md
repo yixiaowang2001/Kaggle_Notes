@@ -45,7 +45,71 @@ Plot both train and test sets -> Match train set to test set
   <img src="../res/img/img66.png" width="600"/>
 </p>
 
-#### 1.2.2 Example
+#### 1.2.2 Try to decode the features
 
-[Notebook link]()
+Example
 
+[Notebook link](https://github.com/yixiaowang2001/Kaggle_Notes/blob/main/res/notebooks/EDA_anonymous.ipynb)
+
+<p align="center">
+  <img src="../res/img/img67.png" width="600"/>
+</p>
+
+#### 1.2.3 Types of features
+
+<p align="center">
+  <img src="../res/img/img68.png" width="600"/>
+</p>
+
+### 1.3 Visualization
+
+#### 1.3.1 Explore individual features
+
++ Histograms
++ Plots
++ Statistics
+
+##### 1.3.1.1 Histogram
+
++ Left: without log; right: with log -> never make conclusions based on one plot
++ Right: Peak: might be missing value
+
+<p align="center">
+  <img src="../res/img/img69.png" width="500"/>
+  <img src="../res/img/img70.png" width="500"/>
+</p>
+
+##### 1.3.1.2 Plots
+
++ Left: horizontal line -> repeated values
++ Left: horizontal line but no vertical line -> values are all randomly shuffled
++ Right: by group(color) -> data is not fully shuffled here, sorted by class label
+
+<p align="center">
+  <img src="../res/img/img71.png" width="500"/>
+  <img src="../res/img/img72.png" width="500"/>
+</p>
+
+##### 1.3.1.3 Feature Statistics
+
++ Right: help find missing values
+
+<p align="center">
+  <img src="../res/img/img73.png" width="500"/>
+  <img src="../res/img/img74.png" width="500"/>
+</p>
+
+#### 1.3.2 Explore feature relations
+
++ Scatter plot
++ Correlation plot
++ Plot (index vs. feature statistics)
+
+##### 1.3.2.1 Scatter plot
+
++ Left: relationship between two features -> classification task, colors of points are the groups; regressiion task, heat map light coloring / values can be reflected by point sizes
+
+<p align="center">
+  <img src="../res/img/img73.png" width="500"/>
+  <img src="../res/img/img74.png" width="500"/>
+</p>
