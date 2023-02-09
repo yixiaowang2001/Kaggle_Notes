@@ -108,8 +108,44 @@ Example
 ##### 1.3.2.1 Scatter plot
 
 + Left: relationship between two features -> classification task, colors of points are the groups; regressiion task, heat map light coloring / values can be reflected by point sizes
++ Right: distributions of train and test sets data —> if you see some kind of discrepancy between colored and gray points distribution -> bug/overfitting (not healthy)
 
 <p align="center">
-  <img src="../res/img/img73.png" width="500"/>
-  <img src="../res/img/img74.png" width="500"/>
+  <img src="../res/img/img75.png" width="500"/>
+  <img src="../res/img/img76.png" width="500"/>
+</p>
+
+##### 1.3.2.2 Plot (index vs. feature statistics)
+
++ Left: relationship between x2 and x1? -> x2 <= 1 - x1
++ Right: goal is feature generation -> make a feature to each triangle in given points belong
+
+<p align="center">
+  <img src="../res/img/img77.png" width="500"/>
+  <img src="../res/img/img78.png" width="500"/>
+</p>
+
+Small data: 
+
+<p align="center">
+  <img src="../res/img/img79.png" width="600"/>
+</p>
+
+##### 1.3.2.3 Correlation plot
+
++ Left: before clustering: if the plot look like a mess here, we can run some kind of clustering like K-means clustering on the rows and columns of this matrix and reorder the features
++ Right: after clustering
+
+<p align="center">
+  <img src="../res/img/img80.png" width="500"/>
+  <img src="../res/img/img81.png" width="500"/>
+</p>
+
+##### 1.3.2.4 Other plots
+
++ Left: plot (feature index vs. feature mean)
++ Right: plot after sorting feature mean
+
+<p align="center">
+  <img src="../res/img/img82.png" width="600"/>
 </p>
