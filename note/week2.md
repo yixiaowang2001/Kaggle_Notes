@@ -45,9 +45,7 @@ Plot both train and test sets -> Match train set to test set
   <img src="../res/img/img66.png" width="600"/>
 </p>
 
-#### 1.2.2 Try to decode the features
-
-Example
+#### 1.2.2 Try to decode the features (Example)
 
 [Notebook link](https://github.com/yixiaowang2001/Kaggle_Notes/blob/main/res/notebooks/EDA_anonymous.ipynb)
 
@@ -194,4 +192,12 @@ Small data:
 
 <p align="center">
   <img src="../res/img/img89.png" width="600"/>
+</p>
+
+### 1.6 EDA Example (Springleaf)
+
+[Notebook link](https://github.com/yixiaowang2001/Kaggle_Notes/blob/main/res/notebooks/EDA_springleaf.ipynb)
+
+<p align="center">
+  <img src="../res/img/img90.png" width="600"/>
 </p>
