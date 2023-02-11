@@ -149,3 +149,49 @@ Small data:
 <p align="center">
   <img src="../res/img/img82.png" width="600"/>
 </p>
+
+### 1.4 Dataset Cleaning
+
+#### 1.4.1 Dataset Cleaning
+
+##### 1.4.1.1 Duplicated and constant features
+
++ Left: feature that has same value in both train and test set -> REMOVE
++ Right: feature that has same value in train set, but different value in test set -> REMOVE: Linear model will assign some weight to the feature, but the weight is totally unreliable to the new values of that feature
++ If the feature is not constant in train set, but constant in test set -> Do the new value matter much or not?: come up with a validation set, compared the model outcome with the same feature value, or the new feature values -> REMOVE or CREATE a separate model for the object with new feature values
+
+<p align="center">
+  <img src="../res/img/img83.png" width="500"/>
+  <img src="../res/img/img84.png" width="500"/>
+</p>
+
++ Left: numerical features of duplicated columns
++ Right: categorical features of duplicated columns but with disordered notation ([A, B, C] -> [B, C, A])
+
+<p align="center">
+  <img src="../res/img/img85.png" width="500"/>
+  <img src="../res/img/img86.png" width="500"/>
+</p>
+
+##### 1.4.1.2 Duplicated rows
+
++ Duplicated row (and check if train and test sets hava the same row -> set label for the test row that are present in the trian set)
+
+<p align="center">
+  <img src="../res/img/img87.png" width="600"/>
+</p>
+
+#### 1.4.2 Check if the dataset is shuffled
+
++ Not shuffled -> high chance to find data leakage
++ Plug a feature or target vector vs. row index (optionally smooth the values using running average) -> if the data is shuffled properly, we can see the value is oscillating around the average
+
+<p align="center">
+  <img src="../res/img/img88.png" width="600"/>
+</p>
+
+### 1.5 EDA Check List
+
+<p align="center">
+  <img src="../res/img/img89.png" width="600"/>
+</p>
