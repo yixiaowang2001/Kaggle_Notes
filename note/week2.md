@@ -201,3 +201,5 @@ Small data:
 <p align="center">
   <img src="../res/img/img90.png" width="600"/>
 </p>
+
+### 1.7 Numerai Competition
