@@ -204,7 +204,7 @@ Small data:
   <img src="../res/img/img90.png" width="600"/>
 </p>
 
-#### 1.6.2 Numerai Competition
+#### 1.6.2 Numerai competition
 
 <p align="center">
   <img src="../res/img/img91.png" width="600"/>
@@ -216,3 +216,30 @@ Small data:
   <img src="../res/img/img92.png" width="600"/>
 </p>
 
+##### 1.6.2.2 Hardcore EDA
+
+Start with correlated features
+
+<p align="center">
+  <img src="../res/img/img93.png" width="600"/>
+</p>
+
+##### 1.6.2.3 Relationship between different weeks of data
+
+<p align="center">
+  <img src="../res/img/img94.png" width="600"/>
+</p>
+
+### 1.5 Validation and Overfitting
+
+#### 1.5.1 Competition data structure
+
+<p align="center">
+  <img src="../res/img/img95.png" width="600"/>
+</p>
+
+#### 1.5.2 Underfitting and overfitting
+
+<p align="center">
+  <img src="../res/img/img96.png" width="600"/>
+</p>
