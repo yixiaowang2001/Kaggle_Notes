@@ -194,7 +194,9 @@ Small data:
   <img src="../res/img/img89.png" width="600"/>
 </p>
 
-### 1.6 EDA Example (Springleaf)
+### 1.6 EDA Example
+
+#### 1.6.1 Springleaf
 
 [Notebook link](https://github.com/yixiaowang2001/Kaggle_Notes/blob/main/res/notebooks/EDA_springleaf.ipynb)
 
@@ -202,4 +204,15 @@ Small data:
   <img src="../res/img/img90.png" width="600"/>
 </p>
 
-### 1.7 Numerai Competition
+#### 1.6.2 Numerai Competition
+
+<p align="center">
+  <img src="../res/img/img91.png" width="600"/>
+</p>
+
+##### 1.6.2.1 Data leakage
+
+<p align="center">
+  <img src="../res/img/img92.png" width="600"/>
+</p>
+
