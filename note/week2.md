@@ -234,12 +234,57 @@ Start with correlated features
 
 #### 1.5.1 Competition data structure
 
+Train, validation, and test sets
+
 <p align="center">
   <img src="../res/img/img95.png" width="600"/>
 </p>
 
 #### 1.5.2 Underfitting and overfitting
 
++ Underfitting: not capturing enough patterns in the data
++ Overfitting: capturing noize; capturing patterns which do not generalize to test data
+
+Training error is better than test error -> overfitting is better than underfitting in a general sense
+
 <p align="center">
-  <img src="../res/img/img96.png" width="600"/>
+  <img src="../res/img/img96.png" width="500"/>
+  <img src="../res/img/img97.png" width="500"/>
+</p>
+
+#### 1.5.3 Valiation startegies
+
+##### 1.5.3.1 Holdout
+
+<p align="center">
+  <img src="../res/img/img98.png" width="600"/>
+</p>
+
+##### 1.5.3.2 K-fold
+
+Difference between K-fold and use holdout for k times: some sample might not be validation in holdout version (overlap)
+
+<p align="center">
+  <img src="../res/img/img99.png" width="600"/>
+</p>
+
+##### 1.5.3.2 Leave-one-out
+
++ Special case when K-fold = k -> leave-one-out
++ Effective when the data is too small
+
+<p align="center">
+  <img src="../res/img/img100.png" width="600"/>
+</p>
+
+#### 1.5.3 Stratification
+
++ Get similar distribution over different folds
++ It is useful for:
+  + Small datasets
+  + Unbalanced datasets
+  + Multiclass classification
+
+<p align="center">
+  <img src="../res/img/img101.png" width="600"/>
 </p>
