@@ -288,3 +288,31 @@ Difference between K-fold and use holdout for k times: some sample might not be 
 <p align="center">
   <img src="../res/img/img101.png" width="600"/>
 </p>
+
+### 1.6 Data Splitting Strategies
+
+#### 1.6.1 Different approaches to validaiton
+
+Example: use current data to predict next week's sales data
++ Two different split startegy will lead to totally different outcome; the best model of the first type of validation split won't be the best one of the second
+
+<p align="center">
+  <img src="../res/img/img102.png" width="600"/>
+</p>
+
+In the second case, validation score will be closer to the test score
+
+<p align="center">
+  <img src="../res/img/img103.png" width="600"/>
+</p>
+
+#### 1.6.2 Splitting data into train and validation
+
++ Random, rowwise
++ Timewise: special case -> moving window
++ By id: distinguish train and test data
+
+<p align="center">
+  <img src="../res/img/img104.png" width="500"/>
+  <img src="../res/img/img105.png" width="500"/>
+</p>
