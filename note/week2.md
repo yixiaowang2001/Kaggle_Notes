@@ -316,3 +316,57 @@ In the second case, validation score will be closer to the test score
   <img src="../res/img/img104.png" width="500"/>
   <img src="../res/img/img105.png" width="500"/>
 </p>
+
+#### 1.6.3 Problems occuring during validation 
+
+##### 1.6.3.1 Different scores for different folds
+
+Causes of different scores and optimal parameters
+1. Too little data: train data is so small that the model cannot generalize all features properly -> different data different features -> different scores
+2. Too diverse and inconsistent data
+
+We should do extensive validation
+1. Average scores from different KFold splits
+2. Tune model on one split, evaluate score on the other
+
+##### 1.6.3.2 Submission stage
+
+<p align="center">
+  <img src="../res/img/img106.png" width="600"/>
+</p>
+
+Different distributions: 
+
+**Example 1**
++ Distributions of heights for man and woman
++ Train (woman) and test (man)
+
+Solutions:
+1. Mean for train -> calculate from the train data
+2. Mean for test (literal probing)
+  1. If the competition's evaluation metric is s.d., we can send to constant submissions write down simple formula
+  2. Find out that the average targe value for the test is xxxx
+3. Know the difference -> add the value to all predictions
+
+<p align="center">
+  <img src="../res/img/img107.png" width="600"/>
+</p>
+
+**Example 2**
++ Trian consist both men and women
++ Test consist both men and women
+
+Solutions:
+1. Mimic the train test split: if test consist most of the men, force the validation to have the same distribution
+
+<p align="center">
+  <img src="../res/img/img108.png" width="600"/>
+</p>
+
+##### 1.6.3.2 Conclusion
+
+<p align="center">
+  <img src="../res/img/img109.png" width="600"/>
+</p>
+
+### 1.7 Data Leakages
