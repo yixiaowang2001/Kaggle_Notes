@@ -44,3 +44,34 @@
 <p align="center">
   <img src="../res/img/img122.png" width="600"/>
 </p>
+
+### 1.4 MSPE and MAPE
+
++ MSE and MAE can not reflect the data well in this case
++ MAPE and MSPE are basically MAE and MSE with weighted
++ Curve become more flat
+
+<p align="center">
+  <img src="../res/img/img123.png" width="500"/>
+  <img src="../res/img/img124.png" width="500"/>
+</p>
+
+### 1.5 (R)MSLE
+
++ (R)MSLE - MSE in log space
++ Use same as MSPE and MAPE
++ Relative errors more compared the absolute errors
++ Assymetry error curve: better to predict more than target value
+
+<p align="center">
+  <img src="../res/img/img125.png" width="600"/>
+</p>
+
+### 1.6 Summary
+
++ RMSLE > MAPE / MSPE
++ MAPE and MSPE have strong bias to smaller values
+
+<p align="center">
+  <img src="../res/img/img126.png" width="600"/>
+</p>
