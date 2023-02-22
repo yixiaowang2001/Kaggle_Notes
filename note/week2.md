@@ -425,8 +425,3 @@ Solutions:
 <p align="center">
   <img src="../res/img/img117.png" width="600"/>
 </p>
-
-
-<p align="center">
-  <img src="../res/img/img118.png" width="600"/>
-</p>
