@@ -75,3 +75,94 @@
 <p align="center">
   <img src="../res/img/img126.png" width="600"/>
 </p>
+
+## 2 Classification Metrics
+
+### 2.1 Notations
+
+<p align="center">
+  <img src="../res/img/img127.png" width="600"/>
+</p>
+
+### 2.2 Accuracy score
+
++ Need hard predictions
++ Baseline could be very high
+
+<p align="center">
+  <img src="../res/img/img128.png" width="600"/>
+</p>
+
+### 2.3 Logloss
+
+For multi-classes, if the number of classes is two -> binary case
+
+<p align="center">
+  <img src="../res/img/img129.png" width="600"/>
+</p>
+
+### 2.4 AUC, ROC
+
++ How to calculate area:
+  1. Start with the bottom left one
+  2. Go right when meets a red dot
+  3. Go left when meets a green dot
++ Does not depend on the abosluate values, but ordering of objects
++ Transfer soft to hard labels -> removes the dependence of the score on threshold
+
+<p align="center">
+  <img src="../res/img/img130.png" width="600"/>
+</p>
+
++ Dot line: how is the curve if our predictions are randomly generated
++ Basicline: 0.5
+
+<p align="center">
+  <img src="../res/img/img131.png" width="500"/>
+  <img src="../res/img/img132.png" width="500"/>
+</p>
+
+### 2.5 Cohen's Kappa
+
+Baseline: if we have 20 cat labels and 80 dog labels, baseline would be 0.2\*0.1 + 0.8\*0.9 = 0.74
+
+<p align="center">
+  <img src="../res/img/img133.png" width="600"/>
+</p>
+
++ Weighted error -> Quadratic and Linear Weighted Kappa
++ Usually be used as: how much the predictions of the model agree with ground-truth raters -> how much does the model agree with professional doctors
+
+<p align="center">
+  <img src="../res/img/img134.png" width="500"/>
+  <img src="../res/img/img135.png" width="500"/>
+</p>
+
+## 3 General Approach of Metrics Optimization
+
+### 3.1 Introduction
+
++ Target metric: what we want to optimize
++ Optimization loss: what model optimizes
+
+<p align="center">
+  <img src="../res/img/img136.png" width="600"/>
+</p>
+
+### 3.2 Approaches
+
+1. Just run the right model! -> MSE, logloss
+  + Find the best model by setting the loss function to be these metrics
+2. Preprocess train and optimize another metric -> MSPE, MAPE, RMSLE, ...
+  + Cannot be used directly -> preprocess the data to fit the model which can use these metrics: XGBoost can not optimize MSPE, but we can change the train set to make XGBoost optimize MSE
+3. Optimize another metric -> Accuracy, Kappa
+  + Postprocess predictions
+4. Optimize other metrics
+  + Early stopping
+4. Write custom loss function
+  + Example:
+
+<p align="center">
+  <img src="../res/img/img137.png" width="500"/>
+  <img src="../res/img/img136.png" width="500"/>
+</p>
