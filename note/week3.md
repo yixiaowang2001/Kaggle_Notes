@@ -177,3 +177,25 @@ Baseline: if we have 20 cat labels and 80 dog labels, baseline would be 0.2\*0.1
   <img src="../res/img/img139.png" width="500"/>
 </p>
 
+Optimize MSE, MAE: write own functions -> hubor loss
+
+<p align="center">
+  <img src="../res/img/img140.png" width="600"/>
+</p>
+
+### 3.4 MSPE, MAPE
+
+1. Customize loss in NN or XGBoost
+2. Different metics and do early stopping
+
+<p align="center">
+  <img src="../res/img/img141.png" width="600"/>
+</p>
+
+### 3.5 RMSLE
+
+Transform the dataset to log scale
+
+<p align="center">
+  <img src="../res/img/img142.png" width="600"/>
+</p>
