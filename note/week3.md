@@ -138,7 +138,7 @@ Baseline: if we have 20 cat labels and 80 dog labels, baseline would be 0.2\*0.1
   <img src="../res/img/img135.png" width="500"/>
 </p>
 
-## 3 General Approach of Metrics Optimization
+## 3 Metrics Optimization
 
 ### 3.1 Introduction
 
@@ -166,3 +166,14 @@ Baseline: if we have 20 cat labels and 80 dog labels, baseline would be 0.2\*0.1
   <img src="../res/img/img137.png" width="500"/>
   <img src="../res/img/img136.png" width="500"/>
 </p>
+
+### 3.3 RMSE, MSE, R2
+
++ Left: libraries that support **MSE** optimization
++ Right: libraries that support **MAE** optimization
+
+<p align="center">
+  <img src="../res/img/img138.png" width="500"/>
+  <img src="../res/img/img139.png" width="500"/>
+</p>
+
