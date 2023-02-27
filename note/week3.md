@@ -167,7 +167,9 @@ Baseline: if we have 20 cat labels and 80 dog labels, baseline would be 0.2\*0.1
   <img src="../res/img/img136.png" width="500"/>
 </p>
 
-### 3.3 RMSE, MSE, R2
+### 3.3 Regression Metrics
+
+#### 3.3.1 RMSE, MSE, R2
 
 + Left: libraries that support **MSE** optimization
 + Right: libraries that support **MAE** optimization
@@ -183,7 +185,7 @@ Optimize MSE, MAE: write own functions -> hubor loss
   <img src="../res/img/img140.png" width="600"/>
 </p>
 
-### 3.4 MSPE, MAPE
+#### 3.3.2 MSPE, MAPE
 
 1. Customize loss in NN or XGBoost
 2. Different metics and do early stopping
@@ -192,10 +194,59 @@ Optimize MSE, MAE: write own functions -> hubor loss
   <img src="../res/img/img141.png" width="600"/>
 </p>
 
-### 3.5 RMSLE
+#### 3.3.3 RMSLE
 
 Transform the dataset to log scale
 
 <p align="center">
   <img src="../res/img/img142.png" width="600"/>
+</p>
+
+### 3.4 Classification Metrics
+
+#### 3.4.1 Logloss
+
++ Random forest preidiction tends to have bad logloss performance
++ Solve above: probability calibration (modify prediction)
+
+<p align="center">
+  <img src="../res/img/img143.png" width="500"/>
+  <img src="../res/img/img144.png" width="500"/>
+</p>
+
+#### 3.4.2 Accuracy
+
+Tune the threshold (simply with for loop)
+
+<p align="center">
+  <img src="../res/img/img145.png" width="500"/>
+  <img src="../res/img/img146.png" width="500"/>
+</p>
+
+#### 3.4.3 AUC (ROC)
+
+Preferred pairwise loss -> implement logloss to AUC
+
+<p align="center">
+  <img src="../res/img/img147.png" width="500"/>
+  <img src="../res/img/img148.png" width="500"/>
+</p>
+
+XGBoost learned logloss can give comparable AUC score to the one learned with pairwise loss
+
+<p align="center">
+  <img src="../res/img/img149.png" width="500"/>
+  <img src="../res/img/img150.png" width="500"/>
+</p>
+
+#### 3.4.4 (Quatic weighted) Kappa
+
+How do you otpimize it?
++ Optimize MSE and find right thresholds - simple
++ Customize smooth lost for GBDT or neural nets - hard
+
+Find proper threshold: can be easily done by grid search
+
+<p align="center">
+  <img src="../res/img/img151.png" width="600"/>
 </p>
