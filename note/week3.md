@@ -250,3 +250,131 @@ Find proper threshold: can be easily done by grid search
 <p align="center">
   <img src="../res/img/img151.png" width="600"/>
 </p>
+
+### 3.5 Target Eoncoding
+
+Using target to generate features
+
+#### 3.5.1 Simple example
+
+Generate feature mean (group by feature and calculate target mean)
+
+<p align="center">
+  <img src="../res/img/img152.png" width="600"/>
+</p>
+
+#### 3.5.2 Why does it work
+
++ Left: label encoding -> random groups, no apprent groups
++ Right: mean encoding -> more apprent groups of features
+
+<p align="center">
+  <img src="../res/img/img153.png" width="600"/>
+</p>
+
+Performances
+
+<p align="center">
+  <img src="../res/img/img154.png" width="600"/>
+</p>
+
+#### 3.5.3 Ways to calculate encodings
+
+<p align="center">
+  <img src="../res/img/img155.png" width="600"/>
+</p>
+
+#### 3.5.4 Springleaf example
+
+Right: clear sign of overfitting -> if we use target mean encoding before train and test splits, we can easily get such a result
+
+<p align="center">
+  <img src="../res/img/img156.png" width="500"/>
+  <img src="../res/img/img157.png" width="500"/>
+</p>
+
+Reasons of overfitting: target 1 in train and target 0 in validation
+
+<p align="center">
+  <img src="../res/img/img158.png" width="600"/>
+</p>
+
+#### 3.5.5 Regularization
+
+Pipeline
+
+<p align="center">
+  <img src="../res/img/img159.png" width="600"/>
+</p>
+
+Code
+
+<p align="center">
+  <img src="../res/img/img160.png" width="600"/>
+</p>
+
+##### 3.5.5.1 CV Loop
+
+<p align="center">
+  <img src="../res/img/img161.png" width="600"/>
+</p>
+
+##### 3.5.5.2 Smoothing
+
+<p align="center">
+  <img src="../res/img/img162.png" width="600"/>
+</p>
+
+##### 3.5.5.3 Noise
+
+<p align="center">
+  <img src="../res/img/img163.png" width="600"/>
+</p>
+
+##### 3.5.5.4 Expanding mean
+
+Use only rows from zero to n minus one to calculate encoding for row n
+
+<p align="center">
+  <img src="../res/img/img164.png" width="600"/>
+</p>
+
+#### 3.5.6 Generalization and extensions
+
+##### 3.5.6.1 Regression and multiclass
+
+<p align="center">
+  <img src="../res/img/img165.png" width="600"/>
+</p>
+
+##### 3.5.6.2 Many-to-many relations
+
+<p align="center">
+  <img src="../res/img/img166.png" width="600"/>
+</p>
+
+##### 3.5.6.3 Time series
+
+<p align="center">
+  <img src="../res/img/img167.png" width="600"/>
+</p>
+
+##### 3.5.6.4 Interactions and numerical features
+
+Mean encoding interactions: mean cencode on interaction variables
+
+<p align="center">
+  <img src="../res/img/img168.png" width="600"/>
+</p>
+
+##### 3.5.6.5 Correct validation reminder
+
+<p align="center">
+  <img src="../res/img/img169.png" width="600"/>
+</p>
+
+#### 3.5.7 Summary
+
+<p align="center">
+  <img src="../res/img/img170.png" width="600"/>
+</p>
