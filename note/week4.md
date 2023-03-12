@@ -196,6 +196,29 @@
 ### 3.5 Type Five
 
 <p align="center">
-  <img src="../res/img/img201.png" width="500"/>
-  <!-- <img src="../res/img/img202.png" width="500"/> -->
+  <img src="../res/img/img201.png" width="600"/>
+</p>
+
+<p align="center">
+  <img src="../res/img/img202.png" width="500"/>
+  <img src="../res/img/img203.png" width="500"/>
+</p>
+
+<p align="center">
+  <img src="../res/img/img204.png" width="500"/>
+  <img src="../res/img/img205.png" width="500"/>
+</p>
+
+<p align="center">
+  <img src="../res/img/img206.png" width="500"/>
+  <img src="../res/img/img207.png" width="500"/>
+</p>
+
+<p align="center">
+  <img src="../res/img/img208.png" width="500"/>
+  <img src="../res/img/img209.png" width="500"/>
+</p>
+
+<p align="center">
+  <img src="../res/img/img210.png" width="600"/>
 </p>
