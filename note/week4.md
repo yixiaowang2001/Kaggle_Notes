@@ -222,3 +222,46 @@
 <p align="center">
   <img src="../res/img/img210.png" width="600"/>
 </p>
+
+## 4 Statistics and Distance Based Features
+
+### 4.1 Group
+
++ Feature generation
+
+<p align="center">
+  <img src="../res/img/img211.png" width="500"/>
+  <img src="../res/img/img212.png" width="500"/>
+</p>
+
++ Implementation
+
+<p align="center">
+  <img src="../res/img/img213.png" width="600"/>
+</p>
+
++ More features
+
+<p align="center">
+  <img src="../res/img/img214.png" width="600"/>
+</p>
+
+### 4.2 Neighbors
+
++ Left: What if there is no features to use group by on? -> Replacing grouping operations with finding the nearest neighbors
++ Right: Example
+
+<p align="center">
+  <img src="../res/img/img215.png" width="500"/>
+  <img src="../res/img/img216.png" width="500"/>
+</p>
+
++ Springleaf example
+
+<p align="center">
+  <img src="../res/img/img215.png" width="500"/>
+  <img src="../res/img/img216.png" width="500"/>
+</p>
+
+### 4.3 Matrix Factorizations for Feature Extraction
+
