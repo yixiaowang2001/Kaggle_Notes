@@ -86,4 +86,116 @@
 
 ### 2.2 Neural Networks
 
+1. ***Number of neurons per layer***: learn more decision boundaries
+    + Overfit fast
+    + Recommanded: start with 64 neurons
+2. ***Number of layers***: same to neurons
+    + Due to otpimization problem, the learning can stop to converge
+    + Recommanded: start with 1 layer
+    + First try to make both the training and validation learning curve go down; then find some configurations which leads to overfitting
+3. ***Optimizer***:
+    + Adapted optimizer, like Adam, is faster but may lead to more overfitting
+4. ***Batch size***: 
+    + Huge batch size leads to more overfitting
+    + Recommended: 32 or 64 (overfitting, decrease; underfitting, increase)
+    + Should not be too small: the gradient will be too noisy
+5. ***Learning rate***:
+    + Not too high and not too low
+    + Recommended: start with 1, and then lower it
+    + Have connection with batch size: multiply learning rate with alpha, the batch size could also be multiplied by alpha (too large batch size will lead to overfitting)
+6. ***Regularization***:
+    + Usually use Dropout as regularization
+    + Where to add: usaully near or at the end of the output layer, but also okay to add dropout layers inside the network
+    + Static dropout: 
+        1. Make the first hidden layer huge
+        2. Add random dropout (say 99%) between the input layer and first hidden layer
+
+
+<p align="center">
+  <img src="../res/img/img178.png" width="500"/>
+  <img src="../res/img/img179.png" width="500"/>
+</p>
+
 ### 2.3 Linear Models
+
++ SVC / SVR
+    + Vowpol: speed up the porcess (reading data row by row)
+    + Hyperparamters, except C (inverse), increase and the model tend to become more overfitting
+    + Recommended: start with small C, 10e-6 (multiplied by 10)
+    + Try both L1 and L2
+
+<p align="center">
+  <img src="../res/img/img180.png" width="500"/>
+  <img src="../res/img/img181.png" width="500"/>
+</p>
+
+### 2.4 Summary and Tips
+
+<p align="center">
+  <img src="../res/img/img182.png" width="600"/>
+</p>
+
+## 3 Pratical Guide
+
+### 3.1 Type One
+
+<p align="center">
+  <img src="../res/img/img183.png" width="500"/>
+  <img src="../res/img/img184.png" width="500"/>
+</p>
+
+<p align="center">
+  <img src="../res/img/img185.png" width="500"/>
+  <img src="../res/img/img186.png" width="500"/>
+</p>
+
+### 3.2 Type Two
+
+<p align="center">
+  <img src="../res/img/img187.png" width="500"/>
+  <img src="../res/img/img188.png" width="500"/>
+</p>
+
+<p align="center">
+  <img src="../res/img/img189.png" width="600"/>
+</p>
+
+### 3.3 Type Three
+
+<p align="center">
+  <img src="../res/img/img190.png" width="500"/>
+  <img src="../res/img/img191.png" width="500"/>
+</p>
+
+<p align="center">
+  <img src="../res/img/img192.png" width="600"/>
+</p>
+
+### 3.4 Type Four
+
+<p align="center">
+  <img src="../res/img/img193.png" width="500"/>
+  <img src="../res/img/img194.png" width="500"/>
+</p>
+
+<p align="center">
+  <img src="../res/img/img195.png" width="500"/>
+  <img src="../res/img/img196.png" width="500"/>
+</p>
+
+<p align="center">
+  <img src="../res/img/img197.png" width="500"/>
+  <img src="../res/img/img198.png" width="500"/>
+</p>
+
+<p align="center">
+  <img src="../res/img/img199.png" width="500"/>
+  <img src="../res/img/img200.png" width="500"/>
+</p>
+
+### 3.5 Type Five
+
+<p align="center">
+  <img src="../res/img/img201.png" width="500"/>
+  <!-- <img src="../res/img/img202.png" width="500"/> -->
+</p>
