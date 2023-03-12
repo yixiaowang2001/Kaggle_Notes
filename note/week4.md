@@ -300,3 +300,51 @@ Need to use all parts of the data
 
 ### 4.4 Feature Interactions
 
+Example: banner selection
+
+<p align="center">
+  <img src="../res/img/img226.png" width="600"/>
+</p>
+
+#### 4.4.1 Approach one
+
+Join + one-hot encoding
+
+<p align="center">
+  <img src="../res/img/img227.png" width="600"/>
+</p>
+
+#### 4.4.2 Approach two
+
+One-hot encoding + matrix multiplication
+
+<p align="center">
+  <img src="../res/img/img228.png" width="600"/>
+</p>
+
+#### 4.4.3 Feature operations
+
++ Multiplication
++ Sum
++ Diff
++ Division
+
+If we find feature interactions, there will be a lot of columns -> either feature selection or dimensionality reduction
+
+<p align="center">
+  <img src="../res/img/img229.png" width="500"/>
+  <img src="../res/img/img230.png" width="500"/>
+</p>
+
+#### 4.4.4 Interactions order
+
+<p align="center">
+  <img src="../res/img/img231.png" width="600"/>
+</p>
+
+#### 4.4.5 Extract features from DT
+
+<p align="center">
+  <img src="../res/img/img232.png" width="500"/>
+  <img src="../res/img/img233.png" width="500"/>
+</p>
