@@ -259,9 +259,44 @@
 + Springleaf example
 
 <p align="center">
-  <img src="../res/img/img215.png" width="500"/>
-  <img src="../res/img/img216.png" width="500"/>
+  <img src="../res/img/img217.png" width="500"/>
+  <img src="../res/img/img218.png" width="500"/>
 </p>
 
 ### 4.3 Matrix Factorizations for Feature Extraction
+
+#### 4.3.1 Example 1: RecSys of movies
+
++ Based on the rating matrix R, form two matrices U, M for users and movies
++ U * M = R (approximately)
+
+<p align="center">
+  <img src="../res/img/img219.png" width="500"/>
+  <img src="../res/img/img220.png" width="500"/>
+</p>
+
+#### 4.3.2 Example 2: Documents/words example
+
++ Left: Dimensionality
++ Right: Apply matrix factorization to reduce dimension for each type of preprocessing texts, and combine the result to fit a tree based model
+
+<p align="center">
+  <img src="../res/img/img221.png" width="500"/>
+  <img src="../res/img/img222.png" width="500"/>
+</p>
+
+#### 4.3.3 Notes for matrix factorization
+
+<p align="center">
+  <img src="../res/img/img223.png" width="500"/>
+  <img src="../res/img/img224.png" width="500"/>
+</p>
+
+Need to use all parts of the data
+
+<p align="center">
+  <img src="../res/img/img225.png" width="600"/>
+</p>
+
+### 4.4 Feature Interactions
 
