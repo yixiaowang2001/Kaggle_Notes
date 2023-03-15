@@ -356,3 +356,23 @@ Non-linear methods of dimensionality reduction - manifold learning
 <p align="center">
   <img src="../res/img/img234.png" width="600"/>
 </p>
+
+### 4.5.1 EDA
+
+Example: tSNE and MNIST
+
+Perplexity
+
+<p align="center">
+  <img src="../res/img/img235.png" width="500"/>
+  <img src="../res/img/img236.png" width="500"/>
+</p>
+
+### 4.5.2 Obtain New Features
+
+Concatenate transformers coordinates to the original feature matrix
+
+<p align="center">
+  <img src="../res/img/img237.png" width="500"/>
+  <img src="../res/img/img238.png" width="500"/>
+</p>
