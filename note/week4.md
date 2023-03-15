@@ -382,3 +382,12 @@ Concatenate transformers coordinates to the original feature matrix
 <p align="center">
   <img src="../res/img/img239.png" width="600"/>
 </p>
+
+### 5.1 Averaging
+
+Scatter plot -> when age is less than 50, R2 value is large; but for age greater than 50, R2 value is not that good
+
+<p align="center">
+  <img src="../res/img/img240.png" width="500"/>
+  <img src="../res/img/img241.png" width="500"/>
+</p>
