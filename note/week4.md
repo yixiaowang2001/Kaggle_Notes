@@ -348,3 +348,11 @@ If we find feature interactions, there will be a lot of columns -> either featur
   <img src="../res/img/img232.png" width="500"/>
   <img src="../res/img/img233.png" width="500"/>
 </p>
+
+### 4.5 tSNE
+
+Non-linear methods of dimensionality reduction - manifold learning
+
+<p align="center">
+  <img src="../res/img/img234.png" width="600"/>
+</p>
