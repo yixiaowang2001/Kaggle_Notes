@@ -391,3 +391,22 @@ Scatter plot -> when age is less than 50, R2 value is large; but for age greater
   <img src="../res/img/img240.png" width="500"/>
   <img src="../res/img/img241.png" width="500"/>
 </p>
+
+Or add weight
+
+<p align="center">
+  <img src="../res/img/img242.png" width="500"/>
+  <img src="../res/img/img243.png" width="500"/>
+</p>
+
+### 5.2 Bagging
+
++ What: Means averaging slightly different versions of the same model to improve accuracy
++ Why: There are main errors in modeling: bias (underfitting) and variance (overfitting)
++ Parameters and code?
+
+<p align="center">
+  <img src="../res/img/img244.png" width="500"/>
+  <img src="../res/img/img245.png" width="500"/>
+</p>
+
