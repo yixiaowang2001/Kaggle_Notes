@@ -14,8 +14,8 @@
 
 ### 1.2 How to Use The Libararies?
 
-+ Define a function that will run our model
-+ Specify a serach space
+- Define a function that will run our model
+- Specify a serach space
 
 <p align="center">
   <img src="../res/img/img172.png" width="500"/>
@@ -42,43 +42,44 @@
 
 #### 2.1.1 GBDT
 
-1. ***Max depth***: max depth of the tree
-    + Deeper, better fit
-    + If we get deeper and the model is not overfitting, the model will become better and better for validation set if we increase the depth
-    + Alo implies that there might be a lot of important interactions to extract from the data -> stop tuning and doing some feature generations
-    + Recommended value: 7
-2. ***Subsample***: controls a fraction of objects to use when feeding a tree
-    + Prevent from overfitting
-3. ***colsample_bytree***, ***colsample_bylevel***: controls a fraction of features
-    + Prevent from overfitting
-4. ***min_child_weight***, ***lambda***, ***alpha***: regularization parameters
-    + min_child_weight: increase it, the model will be more conservative; decrease it, the model will be less constrained
-    + Recommend values: 0, 5, 15, 300
-5. ***eta***: (not for tree, but for training): a learning weight, like in graident descent
-    + Higher learning rate: not converge -> small enough learning rate -> better generalization
-    + Too small learning rate: will learn nothing
-6. ***num round***: (not for tree, but for training): how many learning steps we want to perform (how many trees we want to build)
-    + More steps, better fit
-    + Early stopping
-    + When we find the right number of round: multiply the number of rounds by alpha, and devide eta by alpha
-7. ***seed*** (other)
+1. **_Max depth_**: max depth of the tree
+   - Deeper, better fit
+   - If we get deeper and the model is not overfitting, the model will become better and better for validation set if we increase the depth
+   - Alo implies that there might be a lot of important interactions to extract from the data -> stop tuning and doing some feature generations
+   - Recommended value: 7
+2. **_Subsample_**: controls a fraction of objects to use when feeding a tree
+   - Prevent from overfitting
+3. **_colsample_bytree_**, **_colsample_bylevel_**: controls a fraction of features
+   - Prevent from overfitting
+4. **_min_child_weight_**, **_lambda_**, **_alpha_**: regularization parameters
+   - min_child_weight: increase it, the model will be more conservative; decrease it, the model will be less constrained
+   - Recommend values: 0, 5, 15, 300
+5. **_eta_**: (not for tree, but for training): a learning weight, like in graident descent
+   - Higher learning rate: not converge -> small enough learning rate -> better generalization
+   - Too small learning rate: will learn nothing
+6. **_num round_**: (not for tree, but for training): how many learning steps we want to perform (how many trees we want to build)
+   - More steps, better fit
+   - Early stopping
+   - When we find the right number of round: multiply the number of rounds by alpha, and devide eta by alpha
+7. **_seed_** (other)
 
 <p align="center">
   <img src="../res/img/img176.png" width="600"/>
 </p>
 
 #### 2.1.2 Radnom forest and extra trees
-1. ***n_estimator***:
-    + Recommended: 10
-    + Higher, better
-2. ***max_depth***: Can be set to None (unlimited)
-    + Recommended value: 7 (but RF usually have higher depths than XGBoost)
-3. ***max_features***: Similar to colsample in XGBoost
-4. ***min_samples_leaf***: Similar to min_child_weight in XGBoost
-5. ***criterion***: Standard for split
-    + Gini or Entropy: try both and choose the better one
-6. ***random_state*** (not for tree, but for training)
-7. ***n_jobs***: (not for tree, but for training) number of cores you have
+
+1. **_n_estimator_**:
+   - Recommended: 10
+   - Higher, better
+2. **_max_depth_**: Can be set to None (unlimited)
+   - Recommended value: 7 (but RF usually have higher depths than XGBoost)
+3. **_max_features_**: Similar to colsample in XGBoost
+4. **_min_samples_leaf_**: Similar to min_child_weight in XGBoost
+5. **_criterion_**: Standard for split
+   - Gini or Entropy: try both and choose the better one
+6. **_random_state_** (not for tree, but for training)
+7. **_n_jobs_**: (not for tree, but for training) number of cores you have
 
 <p align="center">
   <img src="../res/img/img177.png" width="600"/>
@@ -86,30 +87,29 @@
 
 ### 2.2 Neural Networks
 
-1. ***Number of neurons per layer***: learn more decision boundaries
-    + Overfit fast
-    + Recommanded: start with 64 neurons
-2. ***Number of layers***: same to neurons
-    + Due to otpimization problem, the learning can stop to converge
-    + Recommanded: start with 1 layer
-    + First try to make both the training and validation learning curve go down; then find some configurations which leads to overfitting
-3. ***Optimizer***:
-    + Adapted optimizer, like Adam, is faster but may lead to more overfitting
-4. ***Batch size***: 
-    + Huge batch size leads to more overfitting
-    + Recommended: 32 or 64 (overfitting, decrease; underfitting, increase)
-    + Should not be too small: the gradient will be too noisy
-5. ***Learning rate***:
-    + Not too high and not too low
-    + Recommended: start with 1, and then lower it
-    + Have connection with batch size: multiply learning rate with alpha, the batch size could also be multiplied by alpha (too large batch size will lead to overfitting)
-6. ***Regularization***:
-    + Usually use Dropout as regularization
-    + Where to add: usaully near or at the end of the output layer, but also okay to add dropout layers inside the network
-    + Static dropout: 
-        1. Make the first hidden layer huge
-        2. Add random dropout (say 99%) between the input layer and first hidden layer
-
+1. **_Number of neurons per layer_**: learn more decision boundaries
+   - Overfit fast
+   - Recommanded: start with 64 neurons
+2. **_Number of layers_**: same to neurons
+   - Due to otpimization problem, the learning can stop to converge
+   - Recommanded: start with 1 layer
+   - First try to make both the training and validation learning curve go down; then find some configurations which leads to overfitting
+3. **_Optimizer_**:
+   - Adapted optimizer, like Adam, is faster but may lead to more overfitting
+4. **_Batch size_**:
+   - Huge batch size leads to more overfitting
+   - Recommended: 32 or 64 (overfitting, decrease; underfitting, increase)
+   - Should not be too small: the gradient will be too noisy
+5. **_Learning rate_**:
+   - Not too high and not too low
+   - Recommended: start with 1, and then lower it
+   - Have connection with batch size: multiply learning rate with alpha, the batch size could also be multiplied by alpha (too large batch size will lead to overfitting)
+6. **_Regularization_**:
+   - Usually use Dropout as regularization
+   - Where to add: usaully near or at the end of the output layer, but also okay to add dropout layers inside the network
+   - Static dropout:
+     1. Make the first hidden layer huge
+     2. Add random dropout (say 99%) between the input layer and first hidden layer
 
 <p align="center">
   <img src="../res/img/img178.png" width="500"/>
@@ -118,11 +118,11 @@
 
 ### 2.3 Linear Models
 
-+ SVC / SVR
-    + Vowpol: speed up the porcess (reading data row by row)
-    + Hyperparamters, except C (inverse), increase and the model tend to become more overfitting
-    + Recommended: start with small C, 10e-6 (multiplied by 10)
-    + Try both L1 and L2
+- SVC / SVR
+  - Vowpol: speed up the porcess (reading data row by row)
+  - Hyperparamters, except C (inverse), increase and the model tend to become more overfitting
+  - Recommended: start with small C, 10e-6 (multiplied by 10)
+  - Try both L1 and L2
 
 <p align="center">
   <img src="../res/img/img180.png" width="500"/>
@@ -227,20 +227,20 @@
 
 ### 4.1 Group
 
-+ Feature generation
+- Feature generation
 
 <p align="center">
   <img src="../res/img/img211.png" width="500"/>
   <img src="../res/img/img212.png" width="500"/>
 </p>
 
-+ Implementation
+- Implementation
 
 <p align="center">
   <img src="../res/img/img213.png" width="600"/>
 </p>
 
-+ More features
+- More features
 
 <p align="center">
   <img src="../res/img/img214.png" width="600"/>
@@ -248,15 +248,15 @@
 
 ### 4.2 Neighbors
 
-+ Left: What if there is no features to use group by on? -> Replacing grouping operations with finding the nearest neighbors
-+ Right: Example
+- Left: What if there is no features to use group by on? -> Replacing grouping operations with finding the nearest neighbors
+- Right: Example
 
 <p align="center">
   <img src="../res/img/img215.png" width="500"/>
   <img src="../res/img/img216.png" width="500"/>
 </p>
 
-+ Springleaf example
+- Springleaf example
 
 <p align="center">
   <img src="../res/img/img217.png" width="500"/>
@@ -267,8 +267,8 @@
 
 #### 4.3.1 Example 1: RecSys of movies
 
-+ Based on the rating matrix R, form two matrices U, M for users and movies
-+ U * M = R (approximately)
+- Based on the rating matrix R, form two matrices U, M for users and movies
+- U \* M = R (approximately)
 
 <p align="center">
   <img src="../res/img/img219.png" width="500"/>
@@ -277,8 +277,8 @@
 
 #### 4.3.2 Example 2: Documents/words example
 
-+ Left: Dimensionality
-+ Right: Apply matrix factorization to reduce dimension for each type of preprocessing texts, and combine the result to fit a tree based model
+- Left: Dimensionality
+- Right: Apply matrix factorization to reduce dimension for each type of preprocessing texts, and combine the result to fit a tree based model
 
 <p align="center">
   <img src="../res/img/img221.png" width="500"/>
@@ -324,10 +324,10 @@ One-hot encoding + matrix multiplication
 
 #### 4.4.3 Feature operations
 
-+ Multiplication
-+ Sum
-+ Diff
-+ Division
+- Multiplication
+- Sum
+- Diff
+- Division
 
 If we find feature interactions, there will be a lot of columns -> either feature selection or dimensionality reduction
 
@@ -401,12 +401,27 @@ Or add weight
 
 ### 5.2 Bagging
 
-+ What: Means averaging slightly different versions of the same model to improve accuracy
-+ Why: There are main errors in modeling: bias (underfitting) and variance (overfitting)
-+ Parameters and code?
+- What: Means averaging slightly different versions of the same model to improve accuracy
+- Why: There are main errors in modeling: bias (underfitting) and variance (overfitting)
+- Parameters and code?
 
 <p align="center">
   <img src="../res/img/img244.png" width="500"/>
   <img src="../res/img/img245.png" width="500"/>
 </p>
 
+### 5.3 Boosting
+
+A form of weighted averaging models where each model is built sequentially via taking into account the past model performance
+
+#### 5.3.1 Weighted boosting
+
+1. For a dataset, fit a model to it and get the pred value.
+2. Calculate the absolute error.
+3. Create a variable called weight (may be 1+absolute value).
+4. Fit a new model based on original variables and the new variable weight.
+
+<p align="center">
+  <img src="../res/img/img246.png" width="500"/>
+  <img src="../res/img/img247.png" width="500"/>
+</p>
