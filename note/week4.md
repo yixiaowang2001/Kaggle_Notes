@@ -451,3 +451,39 @@ Parameters and implementations
   <img src="../res/img/img251.png" width="500"/>
   <img src="../res/img/img252.png" width="500"/>
 </p>
+
+### 5.4 Stacking
+
+Means making predictions of a number of models in a hold-out set and then using a different (Meta) model to train on these prediction
+
+- DL: does not need to know the input data, but only the historical performance
+
+<p align="center">
+  <img src="../res/img/img253.png" width="600"/>
+</p>
+
+#### 5.4.1 Methodology
+
+<p align="center">
+  <img src="../res/img/img254.png" width="600"/>
+</p>
+
+Consider dataset A, B, C, and we only know y label for A, B
+
+<p align="center">
+  <img src="../res/img/img255.png" width="600"/>
+</p>
+
+#### 5.4.2 Code example
+
+<p align="center">
+  <img src="../res/img/img256.png" width="600"/>
+</p>
+
+#### 5.4.3 Notes
+
+<p align="center">
+  <img src="../res/img/img257.png" width="600"/>
+</p>
+
+### 5.5 StackNet
