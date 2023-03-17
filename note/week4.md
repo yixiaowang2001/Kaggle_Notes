@@ -525,3 +525,13 @@ Consider dataset A, B, C, and we only know y label for A, B
 </p>
 
 #### 5.5.3 Small tips
+
+**Tips on tips**
+
+1. Neural nets with different layers (e.g. the first nn may have one hidden layer, the second nn may have two hidden layers, ...)
+2. SVM with non-linear kernel (like RBF)
+
+<p align="center">
+  <img src="../res/img/img264.png" width="500"/>
+  <img src="../res/img/img265.png" width="500"/>
+</p>
