@@ -487,3 +487,9 @@ Consider dataset A, B, C, and we only know y label for A, B
 </p>
 
 ### 5.5 StackNet
+
+A scalable meta modelling methodology that utilizes stacking to combine multiple models in a neural network architecture of multiple layers.
+
+<p align="center">
+  <img src="../res/img/img258.png" width="600"/>
+</p>
