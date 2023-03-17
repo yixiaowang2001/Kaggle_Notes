@@ -540,6 +540,28 @@ Consider dataset A, B, C, and we only know y label for A, B
 
 1. Do regression task on classification model (instead of predict age, we can predict if the person's age is larger than 50)
 
+<p align="center">
   <img src="../res/img/img266.png" width="500"/>
   <img src="../res/img/img267.png" width="500"/>
+</p>
+
+### 5.6 CatBoost
+
+Problems
+
+<p align="center">
+  <img src="../res/img/img268.png" width="600"/>
+</p>
+
+Categorical data
+
+<p align="center">
+  <img src="../res/img/img269.png" width="500"/>
+  <img src="../res/img/img270.png" width="500"/>
+</p>
+
+Training parameters
+
+<p align="center">
+  <img src="../res/img/img271.png" width="600"/>
 </p>
