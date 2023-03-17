@@ -488,8 +488,40 @@ Consider dataset A, B, C, and we only know y label for A, B
 
 ### 5.5 StackNet
 
-A scalable meta modelling methodology that utilizes stacking to combine multiple models in a neural network architecture of multiple layers.
+#### 5.5.1 Introduction
+
+- What: A scalable meta modelling methodology that utilizes stacking to combine multiple models in a neural network architecture of multiple layers.
 
 <p align="center">
   <img src="../res/img/img258.png" width="600"/>
 </p>
+
+- Why would this be of any use
+
+<p align="center">
+  <img src="../res/img/img259.png" width="500"/>
+  <img src="../res/img/img260.png" width="500"/>
+</p>
+
+- StackNet as a nerual network
+
+<p align="center">
+  <img src="../res/img/img261.png" width="600"/>
+</p>
+
+#### 5.5.2 How to train
+
+- Use a K-fold paradigm
+- We have a dataset with x0, x1, x2, x3, and y; k = 4 here
+- Procedure
+  1. Use k-1 of the folds train the model, and make prediction on the last fold
+  2. Repeat for k times
+  3. Use the whole train set to get predict value for the test set / use k previous models to get k sets of predictions on test set, and get the average prediction
+  4. Start with another model and repeat step 1~3, and stack your pred results
+
+<p align="center">
+  <img src="../res/img/img262.png" width="500"/>
+  <img src="../res/img/img263.png" width="500"/>
+</p>
+
+#### 5.5.3 Small tips
