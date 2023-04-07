@@ -7,7 +7,15 @@
   <img src="../res/img/img267.png" width="500"/>
 </p>
 
-### 1.1 Description
+### 1.1 Problem Formulation
 
 - Measure the relevance of search results given the queries and product description from e-commercial site
 - Predict the relevance score of a given query and problem description
+
+### 1.2 Data
+
+### 1.3 Metric
+
+### 1.4 Basic Solution
+
+### 1.5 Advanced Features and Tricks
