@@ -9,7 +9,7 @@
 
 ### 1.1 Problem Formulation
 
-- Measure the relevance of search results given the queries and product description from e-commercial site
+- Measure the accuracy of search results
 - Predict the relevance score of a given query and problem description
 
 ### 1.2 Data
