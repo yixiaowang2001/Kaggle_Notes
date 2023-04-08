@@ -40,4 +40,31 @@
 
 ### 1.4 Basic Solution
 
+- Text feature
+- Extending of queries
+- Per-query models
+- Sample weighting
+- Bumper features
+- Ensemble
+- Kappa optimization
+
+#### 1.4.1 Text features: similarities
+
+- Standard measurements
+
+<p align="center">
+  <img src="../res/img/img288.png" width="600"/>
+</p>
+
+- Symbolic n-grams
+
+<p align="center">
+  <img src="../res/img/img289.png" width="600"/>
+</p>
+
+#### 1.4.2 Extending of queries
+
+- Observe 3 important points about data
+  - Queries
+
 ### 1.5 Advanced Features and Tricks
