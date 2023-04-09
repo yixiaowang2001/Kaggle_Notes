@@ -117,3 +117,61 @@
 <p align="center">
   <img src="../res/img/img296.png" width="600"/>
 </p>
+
+## 2 Springleaf
+
+EDA, mean encodings, and features based on nearest neighbors
+
+### 2.1 Stacking scheme
+
+<p align="center">
+  <img src="../res/img/img297.png" width="600"/>
+</p>
+
+### 2.2 0 Level: Feature Packs
+
+- First two: basic dataset + preprocessed dataset -> remove duplicated features and edit some feature interaction based on scatter plots and correlations
+- Third: mean-encoded all categroical features using cv loop
+- Fourth: mean-encoded dataset to calculate features based on nearest neighbors, like
+  - What is the least in closest object of class zero?
+  - How many objects out of ten nearest neighbors belong to class one?
+
+<p align="center">
+  <img src="../res/img/img298.png" width="600"/>
+</p>
+
+### 2.3 1 Level: Out-of-fold Predictions
+
+- XGBoost
+  - Meta features should be diverse
+  - Each meta feature should bring new information about the target
+- Neural network
+  - StandardScaler + ranks + power transformation
+  - Problem: huge outliers which skew network training results - ranks and power transformation
+
+<p align="center">
+  <img src="../res/img/img299.png" width="500"/>
+  <img src="../res/img/img300.png" width="500"/>
+</p>
+
+### 2.4 1 Level: Features
+
+<p align="center">
+  <img src="../res/img/img301.png" width="600"/>
+</p>
+
+### 2.5 2 Level: Classifiers
+
+- Prediction should be diverse
+
+<p align="center">
+  <img src="../res/img/img302.png" width="600"/>
+</p>
+
+### 2.6 3 Level: Final
+
+- Use the linear model as final output -> because a linear model is not inclined to overfitting
+
+<p align="center">
+  <img src="../res/img/img303.png" width="600"/>
+</p>
