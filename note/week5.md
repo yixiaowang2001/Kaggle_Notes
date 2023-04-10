@@ -178,7 +178,7 @@ EDA, mean encodings, and features based on nearest neighbors
 
 ## 3 Microsoft Malware Classification Challenge
 
-### 3.1 Problem description
+### 3.1 Problem Description
 
 - ~20000 program executables, each given in two forms:
   - HEX dump "bytes file"
@@ -202,33 +202,43 @@ EDA, mean encodings, and features based on nearest neighbors
   <img src="../res/img/img307.png" width="600"/>
 </p>
 
-### 3.2 Feature extraction
+### 3.2 Feature Extraction
 
-- Feature 1: size of the files -> accuracy of 88%
+#### 3.2.1 Feature 1
+
+- Size of the files -> accuracy of 88%
 
 <p align="center">
   <img src="../res/img/img308.png" width="600"/>
 </p>
 
-- Feature 2: single bytes counts
+#### 3.2.2 Feature 2
+
+- Single bytes counts
 
 <p align="center">
   <img src="../res/img/img309.png" width="600"/>
 </p>
 
-- Feature 3: system calls (compile file)
+#### 3.2.3 Feature 3
+
+- System calls (compile file)
 
 <p align="center">
   <img src="../res/img/img310.png" width="600"/>
 </p>
 
-- Feature 4: asm operators
+#### 3.2.4 Feature 4
+
+- Asm operators
 
 <p align="center">
   <img src="../res/img/img311.png" width="600"/>
 </p>
 
-- Feature 5: sections distribution (number of .text lines)
+#### 3.2.5 Feature 5
+
+- Sections distribution (number of .text lines)
 
 <p align="center">
   <img src="../res/img/img312.png" width="600"/>
@@ -240,21 +250,94 @@ EDA, mean encodings, and features based on nearest neighbors
   <img src="../res/img/img313.png" width="600"/>
 </p>
 
-- Feature 6: n-gram (4 & 10 grams)
+#### 3.2.6 Feature 6
+
+- N-gram (4 & 10 grams)
 
 <p align="center">
   <img src="../res/img/img313.png" width="500"/>
   <img src="../res/img/img314.png" width="500"/>
 </p>
 
-- Entropy
+#### 3.2.1 Feature 7
+
+- Entropy: high variance -> encrpyt -> may contain trojans
 
 <p align="center">
-  <img src="../res/img/img315.png" width="600"/>
+  <img src="../res/img/img315.png" width="500"/>
+  <img src="../res/img/img316.png" width="500"/>
+</p>
+
+#### 3.2.1 Feature 8
+
+- Strings:
+
+<p align="center">
+  <img src="../res/img/img317.png" width="600"/>
 </p>
 
 ### 3.3 Feature processing and selection
 
+#### 3.3.1 Feature processing
+
+<p align="center">
+  <img src="../res/img/img318.png" width="600"/>
+</p>
+
+- Plots: since we use tree-based models, NMF will be better
+
+<p align="center">
+  <img src="../res/img/img319.png" width="500"/>
+  <img src="../res/img/img320.png" width="500"/>
+</p>
+
+#### 3.3.2 Feature selections
+
+<p align="center">
+  <img src="../res/img/img321.png" width="500"/>
+  <img src="../res/img/img322.png" width="500"/>
+</p>
+
+- Features may contain similar information
+
+<p align="center">
+  <img src="../res/img/img323.png" width="600"/>
+</p>
+
 ### 3.4 Models
 
+<p align="center">
+  <img src="../res/img/img324.png" width="600"/>
+</p>
+
 ### 3.5 Tricks
+
+#### 3.5.1 Pseudo lableling
+
+<p align="center">
+  <img src="../res/img/img325.png" width="600"/>
+</p>
+
+- Put labels on test data as pseudo labels
+- Concatenate fold (in k-fold cv) with test data
+- Switch the fold and do the same thing (train on green, predict on green)
+- Divied test sets to folds and concatenate train set
+- Get final predictions
+
+<p align="center">
+  <img src="../res/img/img326.png" width="500"/>
+  <img src="../res/img/img327.png" width="500"/>
+</p>
+
+- How to use?
+  - Use predictions from another model as test label
+
+<p align="center">
+  <img src="../res/img/img328.png" width="600"/>
+</p>
+
+#### 3.5.2 Per-class weighting
+
+<p align="center">
+  <img src="../res/img/img329.png" width="600"/>
+</p>
