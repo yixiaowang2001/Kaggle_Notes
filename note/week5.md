@@ -175,3 +175,86 @@ EDA, mean encodings, and features based on nearest neighbors
 <p align="center">
   <img src="../res/img/img303.png" width="600"/>
 </p>
+
+## 3 Microsoft Malware Classification Challenge
+
+### 3.1 Problem description
+
+- ~20000 program executables, each given in two forms:
+  - HEX dump "bytes file"
+  - IDA disassembly
+
+<p align="center">
+  <img src="../res/img/img304.png" width="500"/>
+  <img src="../res/img/img305.png" width="500"/>
+</p>
+
+- Evaluation metric: Logloss
+
+<p align="center">
+  <img src="../res/img/img306.png" width="600"/>
+</p>
+
+- Examine the meta data: quick check for leaks
+  - Train and test split is random
+
+<p align="center">
+  <img src="../res/img/img307.png" width="600"/>
+</p>
+
+### 3.2 Feature extraction
+
+- Feature 1: size of the files -> accuracy of 88%
+
+<p align="center">
+  <img src="../res/img/img308.png" width="600"/>
+</p>
+
+- Feature 2: single bytes counts
+
+<p align="center">
+  <img src="../res/img/img309.png" width="600"/>
+</p>
+
+- Feature 3: system calls (compile file)
+
+<p align="center">
+  <img src="../res/img/img310.png" width="600"/>
+</p>
+
+- Feature 4: asm operators
+
+<p align="center">
+  <img src="../res/img/img311.png" width="600"/>
+</p>
+
+- Feature 5: sections distribution (number of .text lines)
+
+<p align="center">
+  <img src="../res/img/img312.png" width="600"/>
+</p>
+
+- Incoporating all features
+
+<p align="center">
+  <img src="../res/img/img313.png" width="600"/>
+</p>
+
+- Feature 6: n-gram (4 & 10 grams)
+
+<p align="center">
+  <img src="../res/img/img313.png" width="500"/>
+  <img src="../res/img/img314.png" width="500"/>
+</p>
+
+- Entropy
+
+<p align="center">
+  <img src="../res/img/img315.png" width="600"/>
+</p>
+
+### 3.3 Feature processing and selection
+
+### 3.4 Models
+
+### 3.5 Tricks
