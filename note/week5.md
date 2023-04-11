@@ -381,3 +381,40 @@ EDA, mean encodings, and features based on nearest neighbors
 <p align="center">
   <img src="../res/img/img335.png" width="600"/>
 </p>
+
+## 5 Acquired Valued Shoppers Challenge
+
+### 5.1 Background
+
+<p align="center">
+  <img src="../res/img/img336.png" width="600"/>
+</p>
+
+### 5.2 Problem to Solve
+
+- Offer -> coupon
+
+<p align="center">
+  <img src="../res/img/img337.png" width="600"/>
+</p>
+
+### 5.3 Challenges
+
+<p align="center">
+  <img src="../res/img/img338.png" width="600"/>
+</p>
+
+### 5.4 Handling Big Data
+
+<p align="center">
+  <img src="../res/img/img339.png" width="500"/>
+  <img src="../res/img/img340.png" width="500"/>
+</p>
+
+- Leave-one-offer-out: use all other offers to validate a specific offer (use offer 1, 2, 3, 5 to validate offer 4)
+- Good, but not enough
+
+<p align="center">
+  <img src="../res/img/img341.png" width="500"/>
+  <img src="../res/img/img342.png" width="500"/>
+</p>
