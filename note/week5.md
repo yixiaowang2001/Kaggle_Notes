@@ -1,6 +1,6 @@
 # Week 5
 
-## 1 Crowdflower Competition Analysis
+## 1 Crowdflower Competition
 
 ### 1.1 Problem Formulation
 
@@ -118,7 +118,7 @@
   <img src="../res/img/img296.png" width="600"/>
 </p>
 
-## 2 Springleaf
+## 2 Springleaf Market Response
 
 EDA, mean encodings, and features based on nearest neighbors
 
@@ -340,4 +340,44 @@ EDA, mean encodings, and features based on nearest neighbors
 
 <p align="center">
   <img src="../res/img/img329.png" width="600"/>
+</p>
+
+## 4 Walmart Trip Type Classification
+
+### 4.1 Problem Statement
+
+<p align="center">
+  <img src="../res/img/img330.png" width="600"/>
+</p>
+
+- Make one prediction for each visit number
+
+<p align="center">
+  <img src="../res/img/img331.png" width="600"/>
+</p>
+
+### 4.2 Data Format
+
+<p align="center">
+  <img src="../res/img/img332.png" width="600"/>
+</p>
+
+### 4.3 Models
+
+<p align="center">
+  <img src="../res/img/img333.png" width="600"/>
+</p>
+
+### 4.4 Feature Engineering
+
+- Interaction term
+
+<p align="center">
+  <img src="../res/img/img334.png" width="600"/>
+</p>
+
+- Time structure (day number in the dataset / number of a visit a day)
+
+<p align="center">
+  <img src="../res/img/img335.png" width="600"/>
 </p>
