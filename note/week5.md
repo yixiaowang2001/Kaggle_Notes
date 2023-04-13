@@ -418,3 +418,18 @@ EDA, mean encodings, and features based on nearest neighbors
   <img src="../res/img/img341.png" width="500"/>
   <img src="../res/img/img342.png" width="500"/>
 </p>
+
+### 5.5 Strategies For Recommenders
+
+- Content-based: make recommendations based on the characteriestcs of the product
+- Collaborative filtering: make recommendations based on how a customer looks like another
+- Hybrid
+
+<p align="center">
+  <img src="../res/img/img343.png" width="500"/>
+  <img src="../res/img/img344.png" width="500"/>
+</p>
+
+<p align="center">
+  <img src="../res/img/img345.png" width="600"/>
+</p>
